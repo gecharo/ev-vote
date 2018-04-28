@@ -4,6 +4,7 @@ const { resolve } = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
 // vars
@@ -93,20 +94,6 @@ module.exports = (env) => {
                             }
                         }
                     ]
-                },
-                {
-                    test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-                    loader: 'url-loader',
-                    options: {
-                        limit: 10000
-                    }
-                },
-                {
-                    test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-                    loader: 'url-loader',
-                    options: {
-                        limit: 10000
-                    }
                 }
             ]
         },
@@ -117,7 +104,13 @@ module.exports = (env) => {
             new MiniCssExtractPlugin({
                 filename: '[name].css'
             }),
-            new VueLoaderPlugin()
+            new VueLoaderPlugin(),
+            new CopyWebpackPlugin([
+                {
+                    from: 'src/assets/',
+                    to: 'assets/'
+                }
+            ])
         ]
     };
 

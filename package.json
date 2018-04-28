@@ -6,7 +6,7 @@
     "scripts": {
         "start": "webpack-dev-server --config config/webpack.config.js --env development --hot",
         "build": "npm run lint && webpack --config config/webpack.config.js --env production",
-        "lint": "eslint --ext .vue,.js src/**"
+        "lint": "eslint --ext .vue,.js src/"
     },
     "author": "",
     "license": "ISC",
@@ -16,6 +16,7 @@
         "babel-eslint": "^8.2.3",
         "babel-loader": "^7.1.4",
         "babel-preset-env": "^1.6.1",
+        "copy-webpack-plugin": "^4.5.1",
         "css-loader": "^0.28.11",
         "eslint": "^4.19.1",
         "eslint-config-airbnb-base": "^12.1.0",

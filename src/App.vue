@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div :class="$style.app">
         <app-header />
         <app-container>
             <countries-list :items="countries"></countries-list>
@@ -11,7 +11,7 @@
 import AppHeader from './components/AppHeader';
 import AppContainer from './components/AppContainer';
 import CountriesList from './components/CountriesList';
-import data from './assets/countries.json';
+import cData from './data/countries.json';
 
 export default {
     name: 'app',
@@ -22,13 +22,13 @@ export default {
     },
     data() {
         return {
-            countries: data.countries
+            countries: cData.countries
         };
     }
 };
 </script>
 
-<style land="scss">
+<style lang="scss" module>
 body {
   margin: 0;
   padding: 0;
@@ -38,7 +38,7 @@ body {
   color: #e5e5e5;
 }
 
-#app {
+.app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -28,15 +28,12 @@ export default {
     },
     props: {
         index: Number,
-        item: Object,
-        abbr: String
+        item: Object
     },
-    data() {
-        return {
-            voteVisible: false,
-            votes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-        };
-    },
+    data: () => ({
+        voteVisible: false,
+        votes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    }),
     methods: {
         showVote() {
             this.voteVisible = !this.voteVisible;

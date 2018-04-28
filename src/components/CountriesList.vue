@@ -1,5 +1,5 @@
 <template>
-    <ul :class="$styles.countriesList">
+    <ul :class="$style.countriesList">
         <countries-list-item
             v-for="(item, index) in items"
             :item="item"

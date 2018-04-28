@@ -1,13 +1,11 @@
 <template>
-    <span :class="`flag flag-icon-${item.abbr}`" />
+    <span :class="$style.flag"><img :src="`assets/flags/${abbr}.png`" /></span>
 </template>
 
 <script>
 export default {
     name: 'countries-list-item',
     props: {
-        index: Number,
-        item: Object,
         abbr: String
     }
 };
