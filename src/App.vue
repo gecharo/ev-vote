@@ -1,31 +1,52 @@
 <template>
-    <div :class="$style.root">
-        Hello
-        <bbd />
+    <div id="app">
+        <app-header />
+        <app-container>
+            <countries-list :items="countries"></countries-list>
+        </app-container>
     </div>
 </template>
 
 <script>
-import Bbd from './Bbd';
+import AppHeader from './components/AppHeader';
+import AppContainer from './components/AppContainer';
+import CountriesList from './components/CountriesList';
+import data from './assets/countries.json';
 
 export default {
     name: 'app',
     components: {
-        Bbd
+        AppHeader,
+        AppContainer,
+        CountriesList
+    },
+    data() {
+        return {
+            countries: data.countries
+        };
     }
 };
 </script>
 
-<style lang="scss" module>
+<style land="scss">
 body {
-  padding: 0;
   margin: 0;
-  font-size: 14px;
-  color: #555555;
-  background: white;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  color: #e5e5e5;
 }
 
-.root {
-  font-size: 24px;
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>

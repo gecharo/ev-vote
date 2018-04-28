@@ -33,6 +33,8 @@
                 "js": "never",
                 "vue": "never"
             }
-        ]
+        ],
+        "max-len": "off",
+        "vue/require-v-for-key": 0
     }
 }
