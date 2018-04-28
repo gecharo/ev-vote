@@ -1,10 +1,10 @@
 <template>
-    <span :class="$style.flag"><img :src="`assets/flags/${abbr}.png`" /></span>
+    <span :class="$style.root"><img :class="$style.flag" :src="`assets/flags/${abbr}.png`" /></span>
 </template>
 
 <script>
 export default {
-    name: 'countries-list-item',
+    name: 'flag',
     props: {
         abbr: String
     }
@@ -14,10 +14,11 @@ export default {
 <style lang="scss" module>
 @import "./../scss/sizes.scss";
 
+.root {
+  margin: 0 $base-size-m;
+}
+
 .flag {
-  margin: $base-size-s;
-  margin-right: $base-size-l;
-  padding: $base-size-m;
-  transform: scale(1.3);
+  width: 80px;
 }
 </style>

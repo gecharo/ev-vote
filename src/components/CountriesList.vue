@@ -1,5 +1,5 @@
 <template>
-    <ul :class="$style.countriesList">
+    <ul :class="$style.list">
         <countries-list-item
             v-for="(item, index) in items"
             :item="item"
@@ -62,7 +62,7 @@ export default {
 <style lang="scss" module>
 @import "./../scss/sizes.scss";
 
-.countries-list {
+.list {
   display: flex;
   flex-direction: column;
   margin: 0;

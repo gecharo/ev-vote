@@ -1,5 +1,5 @@
 <template>
-    <li :class="$style.countriesListItem">
+    <li :class="$style.item">
         <div :class="$style.container">
             <span :class="$style.started">{{ item.id }}</span>
             <span :class="$style.position"><span>{{ index + 1 }}</span></span>
@@ -50,21 +50,23 @@ export default {
 <style lang="scss" module>
 @import "./../scss/sizes.scss";
 
-.countries-list-item {
+.item {
   margin: 0;
   padding: 0;
 }
+
 .container {
   display: inline-flex;
   flex-direction: row;
   align-items: center;
-  width: 100%;
 }
+
 .started {
   width: 20px;
   text-align: center;
   color: #666666;
 }
+
 .position {
   display: flex;
   align-items: center;
@@ -83,21 +85,15 @@ export default {
     margin-top: 1px;
   }
 }
+
 .name {
-  flex: 1;
+  flex: 1 0 auto;
 }
-.flag {
-  margin: $base-size-s;
-  margin-right: $base-size-l;
-  transform: scale(1.3);
-}
-.fa {
-  transform: scale(1.5);
-  padding: $base-size-m;
-}
+
 .show:hover > i {
   color: #ffff00;
 }
+
 .vote {
   user-select: none;
   cursor: pointer;
@@ -106,19 +102,21 @@ export default {
     color: #ffdd00;
   }
 }
+
 .currentVote {
   width: 20px;
   text-align: center;
 }
+
 .voteList {
-  display: flex;
-  flex-direction: column;
-  padding: $base-size-s 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-end;
+  padding: $base-size-s 0;
+  display: flex;
 }
+
 .votes {
   display: flex;
   align-items: center;

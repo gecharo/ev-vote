@@ -13,12 +13,11 @@ export default {
 <style lang="scss" module>
 @import "./../scss/sizes.scss";
 
-.ontainer {
+.container {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   padding: $base-size-l;
-  width: 100%;
   max-width: 720px;
 }
 </style>
