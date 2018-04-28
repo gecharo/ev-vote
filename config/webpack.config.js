@@ -1,16 +1,16 @@
 const { resolve } = require('path');
 
-//plugins
+// plugins
 const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const autoprefixer = require('autoprefixer');
 
-//vars
+// vars
 const CWD = resolve(__dirname, './../');
-const browsers = ['last 2 version'] 
+const browsers = ['last 2 version'];
 
-module.exports = (env, argv) => {
+module.exports = (env) => {
     const DEV = env === 'development';
 
     const config = {
@@ -24,7 +24,7 @@ module.exports = (env, argv) => {
         },
         resolve: {
             alias: {
-                'vue$': 'vue/dist/vue.esm.js'
+                vue$: 'vue/dist/vue.esm.js'
             },
             extensions: ['.js', '.vue']
         },
@@ -35,9 +35,9 @@ module.exports = (env, argv) => {
             splitChunks: {
                 cacheGroups: {
                     commons: {
-                        name: "vendors",
+                        name: 'vendors',
                         test: /[\\/]node_modules[\\/]/,
-                        chunks: "all"
+                        chunks: 'all'
                     }
                 }
             }
@@ -83,7 +83,7 @@ module.exports = (env, argv) => {
                             loader: 'postcss-loader',
                             options: {
                                 sourceMap: DEV,
-                                plugins: [autoprefixer(browsers)],
+                                plugins: [autoprefixer(browsers)]
                             }
                         },
                         {
@@ -101,11 +101,11 @@ module.exports = (env, argv) => {
                 template: resolve(CWD, 'src', 'index.html')
             }),
             new MiniCssExtractPlugin({
-                filename: "[name].css",
+                filename: '[name].css'
             }),
             new VueLoaderPlugin()
         ]
-    }
+    };
 
     if (DEV) {
         Object.assign(config, {
@@ -114,4 +114,4 @@ module.exports = (env, argv) => {
     }
 
     return config;
-}
+};
