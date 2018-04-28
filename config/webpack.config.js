@@ -8,6 +8,7 @@ const autoprefixer = require('autoprefixer');
 
 //vars
 const CWD = resolve(__dirname, './../');
+const browsers = ['last 2 version'] 
 
 module.exports = (env, argv) => {
     const DEV = env === 'development';
@@ -45,7 +46,25 @@ module.exports = (env, argv) => {
             rules: [
                 {
                     test: /\.vue$/,
-                    loader: 'vue-loader'
+                    loader: 'vue-loader',
+                    options: {
+                        hotReload: DEV
+                    }
+                },
+                {
+                    test: /\.js$/,
+                    exclude: /node_modules[\\/]/,
+                    use: {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: [['env', {
+                                targets: {
+                                    browsers
+                                },
+                                modules: false
+                            }]]
+                        }
+                    }
                 },
                 {
                     test: /\.scss$/,
@@ -64,7 +83,7 @@ module.exports = (env, argv) => {
                             loader: 'postcss-loader',
                             options: {
                                 sourceMap: DEV,
-                                plugins: [autoprefixer('last 2 version')],
+                                plugins: [autoprefixer(browsers)],
                             }
                         },
                         {
@@ -87,6 +106,12 @@ module.exports = (env, argv) => {
             new VueLoaderPlugin()
         ]
     }
-    
+
+    if (DEV) {
+        Object.assign(config, {
+            devtool: 'eval-source-map'
+        });
+    }
+
     return config;
 }
