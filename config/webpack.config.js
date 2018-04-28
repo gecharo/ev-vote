@@ -107,8 +107,7 @@ module.exports = (env) => {
             new VueLoaderPlugin(),
             new CopyWebpackPlugin([
                 {
-                    from: 'src/assets/',
-                    to: 'assets/'
+                    from: 'static/'
                 }
             ])
         ]

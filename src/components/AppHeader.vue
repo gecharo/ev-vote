@@ -1,6 +1,6 @@
 <template>
     <div :class="$style.header">
-        <img src="assets/logo.jpg" />
+        <img src="images/logo.jpg" />
     </div>
 </template>
 

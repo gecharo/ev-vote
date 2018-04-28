@@ -1,5 +1,5 @@
 <template>
-    <span :class="$style.root"><img :class="$style.flag" :src="`assets/flags/${abbr}.png`" /></span>
+    <span :class="$style.root"><img :class="$style.flag" :src="`flags/${abbr}.png`" /></span>
 </template>
 
 <script>
