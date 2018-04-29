@@ -14,10 +14,11 @@ export default {
 @import "./../scss/sizes.scss";
 
 .container {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  padding: $base-size-l;
-  max-width: 720px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: $base-size-l;
+    max-width: 720px;
+    width: 100%;
 }
 </style>

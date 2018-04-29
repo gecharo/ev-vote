@@ -2,47 +2,52 @@
     <li :class="$style.item">
         <div :class="$style.container">
             <span :class="$style.started">{{ item.id }}</span>
-            <span :class="$style.position"><span>{{ index + 1 }}</span></span>
+            <position :index="index" :active="voted" />
             <flag :abbr="item.abbr" />
             <span :class="$style.name">{{ item.name }}</span>
-            <span :class="$style.show" @click="showVote">
-                <i :class="'fa fa-star vote' + (item.vote > 0 ? ' voted' : '')" aria-hidden="true" />
-            </span>
-            <span :class="$style.currentVote"><span v-if="item.vote !== 0">{{ item.vote }}</span></span>
+            <star @click.native="showVote" :active="voted" />
+            <span :class="$style.currentVote" v-if="voted">{{ item.vote }}</span>
         </div>
-        <div :class="$style.voteList" v-if="voteVisible">
-            <div :class="$style.votes" @click="vote" v-for="(item, index) in votes" :key="index">
-                <span>{{ item }}</span>
-            </div>
-        </div>
+        <vote-list :class="$style.voteList" v-if="voteVisible" @vote="handleVote" />
     </li>
 </template>
 
 <script>
 import Flag from './Flag';
+import Position from './Position';
+import VoteList from './VoteList';
+import Star from './Star';
 
 export default {
-    name: 'countries-list-item',
     components: {
-        Flag
+        Flag,
+        Position,
+        VoteList,
+        Star
+    },
+    computed: {
+        voted() {
+            return this.item.vote !== 0;
+        }
     },
     props: {
         index: Number,
         item: Object
     },
-    data: () => ({
-        voteVisible: false,
-        votes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12]
-    }),
+    data() {
+        return {
+            voteVisible: false
+        };
+    },
     methods: {
         showVote() {
             this.voteVisible = !this.voteVisible;
         },
-        vote(event) {
-            const vote = Number(event.currentTarget.children[0].innerHTML);
+        handleVote(vote) {
             this.$set(this.item, 'vote', vote);
-            this.$emit('vote', this.index, this.item);
             this.voteVisible = false;
+
+            this.$emit('vote', this.index, this.item);
         }
     }
 };
@@ -52,87 +57,50 @@ export default {
 @import "./../scss/sizes.scss";
 
 .item {
-  margin: 0;
-  padding: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
 }
 
 .container {
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+
+    > *:not(:last-child) {
+        margin-right: $base-size-m;
+    }
 }
 
 .started {
-  width: 20px;
-  text-align: center;
-  color: #666666;
-}
-
-.position {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  margin: 0 24px;
-  border-radius: 50%;
-  background-color: #00aa44;
-  color: white;
-  font-size: 22px;
-  letter-spacing: -2px;
-
-  & > span {
-    margin-right: 2px;
-    margin-top: 1px;
-  }
+    flex: 0 0 auto;
+    width: 22px;
+    font-size: 14px;
+    text-align: center;
+    color: #626777;
+    padding-right: 6px;
 }
 
 .name {
-  flex: 1 0 auto;
+    flex: 1 1 auto;
+    text-align: center;
+    white-space: normal;
+    font-size: 21px;
 }
 
-.show:hover > i {
-  color: #ffff00;
-}
-
-.vote {
-  user-select: none;
-  cursor: pointer;
-
-  &.voted {
-    color: #ffdd00;
-  }
+.test {
+    color: red;
 }
 
 .currentVote {
-  width: 20px;
-  text-align: center;
+    flex: 0 0 auto;
+    width: 28px;
+    text-align: center;
 }
 
 .voteList {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  padding: $base-size-s 0;
-  display: flex;
-}
-
-.votes {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  width: 50px;
-  height: 50px;
-  background-color: #202020;
-  border-radius: 50%;
-  user-select: none;
-  cursor: pointer;
-  margin: $base-size-xs;
-
-  &:hover {
-    background-color: #444444;
-  }
+    padding-left: 28px + $base-size-m;
 }
 </style>

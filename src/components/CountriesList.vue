@@ -14,7 +14,6 @@
 import CountriesListItem from './CountriesListItem';
 
 export default {
-    name: 'countries-list',
     components: {
         CountriesListItem
     },
@@ -62,15 +61,15 @@ export default {
 @import "./../scss/sizes.scss";
 
 .list {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-size: 18px;
 
-  & > li:not(:last-child) {
-    margin-bottom: $base-size-s;
-  }
+    & > li:not(:last-child) {
+        margin-bottom: $base-size-m;
+    }
 }
 </style>

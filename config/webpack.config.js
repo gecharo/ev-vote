@@ -77,7 +77,8 @@ module.exports = (env) => {
                                 sourceMap: DEV,
                                 minimize: !DEV,
                                 modules: true,
-                                localIdentName: DEV ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:5]'
+                                localIdentName: DEV ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:5]',
+                                url: false
                             }
                         },
                         {

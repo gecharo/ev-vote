@@ -4,7 +4,6 @@
 
 <script>
 export default {
-    name: 'flag',
     props: {
         abbr: String
     }
@@ -15,10 +14,11 @@ export default {
 @import "./../scss/sizes.scss";
 
 .root {
-  margin: 0 $base-size-m;
+    margin: 0 $base-size-m;
+    line-height: 0;
 }
 
 .flag {
-  width: 80px;
+  width: 60px;
 }
 </style>
