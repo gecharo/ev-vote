@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import BrowserCookies from 'browser-cookies';
 import AppHeader from './components/AppHeader';
 import AppContainer from './components/AppContainer';
 import CountriesList from './components/CountriesList';
@@ -22,12 +23,12 @@ export default {
     },
     data() {
         return {
-            countries: cData.countries
+            countries: BrowserCookies.get('countries') ? JSON.parse(BrowserCookies.get('countries')) : cData.countries
         };
     },
     watch: {
         countries(countries) {
-            console.log(countries);
+            BrowserCookies.set('countries', JSON.stringify(countries));
         }
     }
 };

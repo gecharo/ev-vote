@@ -28,7 +28,6 @@ export default {
     },
     methods: {
         handleVote(index, { vote }) {
-            console.log('ITEM', index, vote);
             let i = 0;
             const { items } = this;
 
