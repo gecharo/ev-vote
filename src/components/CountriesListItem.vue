@@ -12,7 +12,7 @@
         </div>
         <div :class="$style.voteList" v-if="voteVisible">
             <div :class="$style.votes" @click="vote" v-for="(item, index) in votes" :key="index">
-                <span>{{ item + 1 }}</span>
+                <span>{{ item }}</span>
             </div>
         </div>
     </li>
@@ -32,7 +32,7 @@ export default {
     },
     data: () => ({
         voteVisible: false,
-        votes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+        votes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12]
     }),
     methods: {
         showVote() {
@@ -40,7 +40,8 @@ export default {
         },
         vote(event) {
             const vote = Number(event.currentTarget.children[0].innerHTML);
-            this.$emit('vote', this.index, vote);
+            this.$set(this.item, 'vote', vote);
+            this.$emit('vote', this.index, this.item);
             this.voteVisible = false;
         }
     }

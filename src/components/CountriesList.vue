@@ -27,12 +27,12 @@ export default {
         }
     },
     methods: {
-        handleVote(index, vote) {
+        handleVote(index, { vote }) {
+            console.log('ITEM', index, vote);
             let i = 0;
             const { items } = this;
 
             const newItem = items.splice(index, 1)[0];
-            newItem.vote = vote;
 
             while (i < items.length) {
                 if (items[i].vote > vote) {

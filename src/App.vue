@@ -24,6 +24,11 @@ export default {
         return {
             countries: cData.countries
         };
+    },
+    watch: {
+        countries(countries) {
+            console.log(countries);
+        }
     }
 };
 </script>
