@@ -1,21 +1,28 @@
 <template>
     <div :class="$style.root">
-        <div :class="$style.votes" @click="handleClick" v-for="(item, index) in votes" :key="index">
-            <span :data-vote="item">{{ item }}</span>
+        <div :class="$style.vote" v-for="(item, index) in votes" :key="index">
+            <icon @click.native="handleClick(item)" :class="$style.item" icon="star" :active="item <= vote" />
         </div>
     </div>
 </template>
 
 <script>
+import Icon from './Icon';
+
 export default {
+    components: {
+        Icon
+    },
+    props: {
+        vote: Number
+    },
     data() {
         return {
-            votes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12]
+            votes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12]
         };
     },
     methods: {
-        handleClick(event) {
-            const vote = Number(event.currentTarget.children[0].innerHTML);
+        handleClick(vote) {
             this.$emit('vote', vote);
         }
     }
@@ -28,27 +35,27 @@ export default {
 .root {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    padding: $base-size-s 0;
-    display: flex;
+    justify-content: space-between;
+    padding: $base-size-m;
 }
 
-.votes {
+.vote {
+    flex: 0 0 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
-    width: 50px;
-    height: 50px;
-    background-color: #202020;
+    color: #e5e5e5;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     user-select: none;
     cursor: pointer;
-    margin: $base-size-xs;
+    margin: 3px;
 
     &:hover {
-        background-color: #444444;
+        background-color: #ffdd00;
+        color: #1c212e;
     }
 }
+
 </style>

@@ -18,7 +18,7 @@ export default {
     display: flex;
     flex-direction: column;
     padding: $base-size-l;
-    max-width: 720px;
+    max-width: 640px;
     width: 100%;
 }
 </style>

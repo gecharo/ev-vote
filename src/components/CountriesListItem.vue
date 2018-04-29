@@ -3,12 +3,14 @@
         <div :class="$style.container">
             <span :class="$style.started">{{ item.id }}</span>
             <position :index="index" :active="voted" />
-            <flag :abbr="item.abbr" />
+            <flag :class="$style.flag" :abbr="item.abbr"/>
             <span :class="$style.name">{{ item.name }}</span>
-            <star @click.native="showVote" :active="voted" />
-            <span :class="$style.currentVote" v-if="voted">{{ item.vote }}</span>
+            <div :class="$style.results">
+                <div :class="$style.icon"><icon @click.native="handleIconClick" :active="voted" :icon="voteVisible && item.vote > 0 ? 'trash' : 'star'" size="lg" /></div>
+                <span :class="$style.currentVote" v-if="voted">{{ item.vote }}</span>
+            </div>
         </div>
-        <vote-list :class="$style.voteList" v-if="voteVisible" @vote="handleVote" />
+        <vote-list :class="$style.voteList" v-if="voteVisible" @vote="handleVote" :vote="item.vote" />
     </li>
 </template>
 
@@ -16,14 +18,14 @@
 import Flag from './Flag';
 import Position from './Position';
 import VoteList from './VoteList';
-import Star from './Star';
+import Icon from './Icon';
 
 export default {
     components: {
         Flag,
         Position,
         VoteList,
-        Star
+        Icon
     },
     computed: {
         voted() {
@@ -40,8 +42,12 @@ export default {
         };
     },
     methods: {
-        showVote() {
-            this.voteVisible = !this.voteVisible;
+        handleIconClick() {
+            if (this.voteVisible) {
+                this.handleVote(0);
+            } else {
+                this.voteVisible = !this.voteVisible;
+            }
         },
         handleVote(vote) {
             this.$set(this.item, 'vote', vote);
@@ -83,15 +89,32 @@ export default {
     padding-right: 6px;
 }
 
+.flag {
+    flex: 1 1 60px;
+    text-align: center;
+}
+
 .name {
-    flex: 1 1 auto;
+    flex: 3 1 100px;
     text-align: center;
     white-space: normal;
     font-size: 21px;
 }
 
-.test {
-    color: red;
+.results {
+    width: 65px;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+
+    > *:not(:last-child) {
+        margin-right: $base-size-m;
+    }
+}
+
+.icon {
+    width: 28px;
+    text-align: center;
 }
 
 .currentVote {
@@ -100,7 +123,4 @@ export default {
     text-align: center;
 }
 
-.voteList {
-    padding-left: 28px + $base-size-m;
-}
 </style>

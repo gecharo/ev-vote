@@ -45,7 +45,7 @@ export default {
             let downVote = vote;
             while (i < items.length && downVote > 0 && items[i].vote > 0) {
                 if (items[i].vote === downVote) {
-                    downVote -= 1;
+                    downVote -= downVote === 12 ? 2 : 1;
                     items[i].vote = downVote;
                 }
                 i += 1;

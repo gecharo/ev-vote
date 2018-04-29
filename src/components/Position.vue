@@ -20,9 +20,10 @@ export default {
         width: 32px;
         height: 32px;
         border-radius: 50%;
-        background-color: #888888;
+        background-color: #495166;
         color: white;
         letter-spacing: -2px;
+        opacity: 0.5;
 
         & > span {
             margin-right: 3px;
@@ -30,6 +31,7 @@ export default {
         }
 
         &.active {
+            opacity: 1;
             background-color: #00aa44;
         }
     }
