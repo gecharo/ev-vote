@@ -11,11 +11,14 @@ export default {
 </script>
 
 <style lang="scss" module>
+@import './../scss/shadow.scss';
+
 .root {
     line-height: 0;
 }
 
 .flag {
-  width: 60px;
+    width: 60px;
+    @include box-shadow();
 }
 </style>

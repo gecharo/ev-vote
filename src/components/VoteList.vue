@@ -35,6 +35,7 @@ export default {
 
 <style lang="scss" module>
 @import "./../scss/sizes.scss";
+@import './../scss/shadow.scss';
 
 .root {
     display: flex;
@@ -44,8 +45,8 @@ export default {
     justify-content: space-between;
     padding: $base-size-s + 1 $base-size-m $base-size-s $base-size-m;
     background-color: rgba(54, 62, 100, 0.6);
-    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, .1);
     border-radius: 10px;
+    @include box-shadow();
 }
 
 .vote {
