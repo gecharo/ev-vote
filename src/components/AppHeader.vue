@@ -8,6 +8,6 @@
 @import "./../scss/sizes.scss";
 
 .header {
-    margin: 2 * $base-size-xl $base-size-s 1.5 * $base-size-xl $base-size-s;
+    margin: 2 * $base-size-xl $base-size-s 2 * $base-size-xl $base-size-s;
 }
 </style>

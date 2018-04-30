@@ -1,7 +1,7 @@
 <template>
     <div :class="$style.wrapper">
-        <div :class="$style.waves">&nbsp;</div>
         <div :class="$style.gradient">&nbsp;</div>
+        <div :class="$style.waves">&nbsp;</div>
         <div :class="$style.app">
             <app-header />
             <app-container>
@@ -46,14 +46,12 @@ body {
     width: 100%;
     height: 100%;
     background-color: #1c212e;
-    background-image: url("images/pattern.gif");
+    background-image: url("images/pattern_gray.gif");
     color: #e5e5e5;
 
     font-family: "Oxygen", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
-    min-width: 320px;
 }
 </style>
 
@@ -63,6 +61,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    min-width: 320px;
 }
 
 .gradient {
