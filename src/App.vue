@@ -1,9 +1,13 @@
 <template>
-    <div :class="$style.app">
-        <app-header />
-        <app-container>
-            <countries-list :items="countries"></countries-list>
-        </app-container>
+    <div :class="$style.wrapper">
+        <div :class="$style.waves">&nbsp;</div>
+        <div :class="$style.gradient">&nbsp;</div>
+        <div :class="$style.app">
+            <app-header />
+            <app-container>
+                <countries-list :items="countries"></countries-list>
+            </app-container>
+        </div>
     </div>
 </template>
 
@@ -42,10 +46,8 @@ body {
     width: 100%;
     height: 100%;
     background-color: #1c212e;
-    background-image: url("images/bg.gif");
+    background-image: url("images/pattern.gif");
     color: #e5e5e5;
-    display: flex;
-    justify-content: center;
 
     font-family: "Oxygen", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -56,8 +58,35 @@ body {
 </style>
 
 <style lang="scss" module>
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gradient {
+    position: absolute;
+    z-index: -1;
+    background-image: url("images/gradient.png");
+    background-repeat: repeat-x;
+    background-position: center;
+    width: 100%;
+    height: 342px;
+}
+
+.waves {
+    position: absolute;
+    z-index: -1;
+    background-image: url("images/waves.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 270px;
+}
+
 .app {
-    flex: 1 1 auto;
+    width: 100%;
     max-width: 640px;
 
     display: flex;
