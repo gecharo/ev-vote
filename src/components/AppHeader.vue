@@ -8,8 +8,6 @@
 @import "./../scss/sizes.scss";
 
 .header {
-    padding: $base-size-m;
-    position: relative;
-    z-index: 1;
+    padding: $base-size-s;
 }
 </style>

@@ -1,6 +1,10 @@
 <template>
     <div :class="$style.root">
-        <div :class="$style.vote" v-for="(item, index) in votes" :key="index">
+        <div
+            :class="$style.vote"
+            v-for="(item, index) in votes"
+            :key="index"
+        >
             <icon @click.native="handleClick(item)" :class="$style.item" icon="star" :active="item <= vote" />
         </div>
     </div>
@@ -35,26 +39,64 @@ export default {
 .root {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    margin: $base-size-m 0;
     justify-content: space-between;
-    padding: $base-size-m;
+    padding: $base-size-s + 1 $base-size-m $base-size-s $base-size-m;
+    background-color: rgba(54, 62, 100, 0.6);
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, .1);
+    border-radius: 10px;
 }
 
 .vote {
-    flex: 0 0 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #e5e5e5;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
+
     user-select: none;
     cursor: pointer;
-    margin: 3px;
 
-    &:hover {
-        background-color: #ffdd00;
-        color: #1c212e;
+    flex: 0 0 32px;
+    width: 32px;
+    height: 32px;
+
+    > i {
+        color: #e5e5e5;
+    }
+}
+
+@media only screen and (min-width: 320px) {
+    .vote {
+        flex: 0 0 20px;
+        width: 20px;
+        height: 20px;
+        font-size: 19px;
+    }
+}
+
+@media only screen and (min-width: 360px) {
+    .vote {
+        &:hover {
+            border-radius: 50%;
+            background-color: #ffdd00;
+            > i {
+                color: #1c212e;
+            }
+        }
+
+        flex: 0 0 24px;
+        width: 24px;
+        height: 24px;
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 420px) {
+    .vote {
+        flex: 0 0 32px;
+        width: 32px;
+        height: 32px;
+        font-size: 28px;
     }
 }
 

@@ -37,7 +37,7 @@ module.exports = (env) => {
                 cacheGroups: {
                     commons: {
                         name: 'vendors',
-                        test: /[\\/]node_modules[\\/]/,
+                        test: /node_modules[\\/]/,
                         chunks: 'all'
                     }
                 }
@@ -77,7 +77,7 @@ module.exports = (env) => {
                                 sourceMap: DEV,
                                 minimize: !DEV,
                                 modules: true,
-                                localIdentName: DEV ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:5]',
+                                localIdentName: DEV ? '[name]__[local]--[hash:base64:5]' : '[hash:base64:5]',
                                 url: false
                             }
                         },
@@ -103,7 +103,8 @@ module.exports = (env) => {
                 template: resolve(CWD, 'src', 'index.html')
             }),
             new MiniCssExtractPlugin({
-                filename: '[name].css'
+                filename: '[name].css',
+                chunkFilename: '[name].css'
             }),
             new VueLoaderPlugin(),
             new CopyWebpackPlugin([

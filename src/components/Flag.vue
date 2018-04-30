@@ -1,5 +1,5 @@
 <template>
-    <span :class="$style.root"><img :class="$style.flag" :src="`flags/${abbr}.png`" /></span>
+    <span :class="$style.root"><img :class="$style.flag" :src="`flags/${abbr}.svg`" /></span>
 </template>
 
 <script>
@@ -11,10 +11,7 @@ export default {
 </script>
 
 <style lang="scss" module>
-@import "./../scss/sizes.scss";
-
 .root {
-    margin: 0 $base-size-m;
     line-height: 0;
 }
 

@@ -37,7 +37,6 @@
     },
     "dependencies": {
         "browser-cookies": "^1.2.0",
-        "svg-country-flags": "^1.2.1",
         "vue": "^2.5.16"
     }
 }

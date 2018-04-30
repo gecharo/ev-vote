@@ -15,7 +15,6 @@ import CountriesList from './components/CountriesList';
 import cData from './data/countries.json';
 
 export default {
-    name: 'app',
     components: {
         AppHeader,
         AppContainer,
@@ -34,7 +33,9 @@ export default {
 };
 </script>
 
-<style lang="scss" module>
+<style lang="scss">
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+
 body {
     margin: 0;
     padding: 0;
@@ -43,14 +44,21 @@ body {
     background-color: #1c212e;
     background-image: url("images/bg.gif");
     color: #e5e5e5;
-}
+    display: flex;
+    justify-content: center;
 
-.app {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: "Oxygen", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    width: 100%;
+    min-width: 320px;
+}
+</style>
+
+<style lang="scss" module>
+.app {
+    flex: 1 1 auto;
+    max-width: 640px;
 
     display: flex;
     flex-direction: column;

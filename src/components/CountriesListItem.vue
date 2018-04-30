@@ -43,7 +43,7 @@ export default {
     },
     methods: {
         handleIconClick() {
-            if (this.voteVisible) {
+            if (this.voteVisible && this.item.vote > 0) {
                 this.handleVote(0);
             } else {
                 this.voteVisible = !this.voteVisible;
@@ -82,7 +82,7 @@ export default {
 
 .started {
     flex: 0 0 auto;
-    width: 22px;
+    width: 18px;
     font-size: 14px;
     text-align: center;
     color: #626777;
@@ -94,11 +94,18 @@ export default {
     text-align: center;
 }
 
+@media only screen and (max-width: 359px) {
+    .flag {
+        display: none;
+    }
+}
+
 .name {
     flex: 3 1 100px;
     text-align: center;
-    white-space: normal;
-    font-size: 21px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .results {

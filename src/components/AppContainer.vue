@@ -1,14 +1,8 @@
-<template>
+<template functional>
     <div :class="$style.container">
         <slot></slot>
     </div>
 </template>
-
-<script>
-export default {
-    name: 'app-container'
-};
-</script>
 
 <style lang="scss" module>
 @import "./../scss/sizes.scss";
@@ -18,7 +12,6 @@ export default {
     display: flex;
     flex-direction: column;
     padding: $base-size-l;
-    max-width: 640px;
     width: 100%;
 }
 </style>
