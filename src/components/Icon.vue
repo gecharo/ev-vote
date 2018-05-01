@@ -1,6 +1,6 @@
 <template functional>
     <i
-        :class="['fa', `fa-${props.icon}`, `fa-${props.size}`, $style.root, {[$style.active]: props.active}]"
+        :class="[data.class, 'fa', {[`fa-${props.name}`]: !!props.name}, {[`fa-${props.size}`]: !!props.size}, $style.root, {[$style.active]: props.active}]"
         v-on="listeners"
         aria-hidden="true"
     />
