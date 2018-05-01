@@ -88,7 +88,7 @@ export default {
     width: 18px;
     font-size: 14px;
     text-align: center;
-    color: #626777;
+    color: #626568;
     padding-right: 6px;
 }
 

@@ -19,7 +19,8 @@ export default {
         width: 32px;
         height: 32px;
         border-radius: 50%;
-        background-color: #20293b;
+        background-color: #3c3f44;
+        border: 2px solid #3a3b40;
         color: white;
         letter-spacing: -2px;
 
