@@ -5,18 +5,17 @@
         <div :class="$style.app">
             <app-header />
             <app-container>
-                <countries-list :items="countries"></countries-list>
+                <countries-list :items="countries" @change="handleVoteChange"></countries-list>
             </app-container>
         </div>
     </div>
 </template>
 
 <script>
-import BrowserCookies from 'browser-cookies';
 import AppHeader from './components/AppHeader';
 import AppContainer from './components/AppContainer';
 import CountriesList from './components/CountriesList';
-import cData from './data/countries.json';
+import LocalStorage from './data/LocalStorage';
 
 export default {
     components: {
@@ -26,12 +25,16 @@ export default {
     },
     data() {
         return {
-            countries: BrowserCookies.get('countries') ? JSON.parse(BrowserCookies.get('countries')) : cData.countries
+            countries: LocalStorage.getData()
         };
     },
-    watch: {
-        countries(countries) {
-            BrowserCookies.set('countries', JSON.stringify(countries));
+    methods: {
+        handleVoteChange(item, items) {
+            if (LocalStorage.checkPin(item)) {
+                this.$data.countries = LocalStorage.reset();
+            } else {
+                LocalStorage.setData(items);
+            }
         }
     }
 };

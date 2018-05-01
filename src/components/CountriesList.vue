@@ -52,6 +52,8 @@ export default {
             }
 
             this.items.splice(insertIndex, 0, newItem);
+
+            this.$emit('change', newItem, items);
         }
     }
 };
