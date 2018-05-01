@@ -2,7 +2,7 @@
     <li :class="$style.item">
         <div :class="$style.container">
             <span :class="$style.started">{{ item.id }}</span>
-            <position :index="index" :active="voteActive">{{ voted ? index + 1 : '0' }}</position>
+            <position :class="$style.position" :index="index" :active="voteActive">{{ voted ? index + 1 : '0' }}</position>
             <flag :class="$style.flag" :abbr="item.abbr"/>
             <span :class="$style.name">{{ item.name }}</span>
             <div :class="$style.icon"><icon @click="handleIconClick" :active="voteActive" :icon="voteVisible && voteActive ? 'trash' : 'star'" size="lg" /></div>
@@ -25,6 +25,10 @@ export default {
         VoteList,
         Icon
     },
+    props: {
+        index: Number,
+        item: Object
+    },
     computed: {
         voted() {
             return this.item.vote >= 0;
@@ -32,10 +36,6 @@ export default {
         voteActive() {
             return this.item.vote > 0;
         }
-    },
-    props: {
-        index: Number,
-        item: Object
     },
     data() {
         return {
@@ -90,8 +90,12 @@ export default {
     padding-right: 6px;
 }
 
+.position {
+    flex: 0 0 auto;
+}
+
 .flag {
-    flex: 1 1 60px;
+    flex: 1 1 62px;
     text-align: center;
 }
 
@@ -102,23 +106,14 @@ export default {
 }
 
 .name {
-    flex: 3 1 100px;
+    flex: 2 1 100px;
     text-align: center;
     display: inline-block;
     text-overflow: ellipsis;
     overflow: hidden;
+    line-height: 18px;
+    padding: 5px 0;
 }
-
-// .results {
-//     width: 65px;
-//     display: inline-flex;
-//     flex-direction: row;
-//     align-items: center;
-
-//     > *:not(:last-child) {
-//         margin-right: $base-size-m;
-//     }
-// }
 
 .icon {
     flex: 0 0 auto;

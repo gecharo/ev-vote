@@ -1,5 +1,5 @@
 <template functional>
-    <span :class="[$style.position, {[$style.active]: props.active}]"><span><slot></slot></span></span>
+    <span :class="[data.class, $style.position, {[$style.active]: props.active}]"><span><slot /></span></span>
 </template>
 
 <style lang="scss" module>

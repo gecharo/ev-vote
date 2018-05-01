@@ -1,5 +1,5 @@
 <template functional>
-    <span :class="$style.root"><img :class="$style.flag" :src="`flags/${props.abbr}.svg`" /></span>
+    <span :class="[data.class, $style.root]"><img :class="$style.flag" :src="`flags/${props.abbr}.svg`" /></span>
 </template>
 
 <style lang="scss" module>
@@ -10,7 +10,7 @@
 }
 
 .flag {
-    width: 60px;
+    width: 62px;
     @include box-shadow();
 }
 </style>
