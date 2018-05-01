@@ -1,17 +1,17 @@
 <template>
     <div :class="$style.app">
-        <app-header />
-        <app-container>
+        <app-header :class="$style.header" />
+        <app-container :class="$style.container">
             <countries-list :items="countries" @change="handleVoteChange"></countries-list>
         </app-container>
     </div>
 </template>
 
 <script>
-import AppHeader from './components/AppHeader';
-import AppContainer from './components/AppContainer';
-import CountriesList from './components/CountriesList';
-import LocalStorage from './data/LocalStorage';
+import AppHeader from './AppHeader';
+import AppContainer from './AppContainer';
+import CountriesList from './CountriesList';
+import LocalStorage from './../data/LocalStorage';
 
 export default {
     components: {
@@ -44,5 +44,11 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.header {
+    width: 100%;
+}
+.container {
+    width: 100%;
 }
 </style>

@@ -1,5 +1,5 @@
 <template functional>
-    <div :class="$style.header">
+    <div :class="[data.class, $style.header]">
         <img src="images/logo.png" />
     </div>
 </template>
@@ -8,6 +8,7 @@
 @import "./../scss/sizes.scss";
 
 .header {
-    margin: 2 * $base-size-xl $base-size-s 2 * $base-size-xl $base-size-s;
+    padding: 2 * $base-size-xl 0;
+    text-align: center;
 }
 </style>

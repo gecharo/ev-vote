@@ -1,5 +1,5 @@
 <template functional>
-    <div :class="$style.container">
+    <div :class="[data.class, $style.container]">
         <slot/>
     </div>
 </template>
@@ -8,10 +8,10 @@
 @import "./../scss/sizes.scss";
 
 .container {
+    position: relative;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     padding: $base-size-l;
-    width: 100%;
 }
 </style>

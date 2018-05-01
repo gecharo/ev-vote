@@ -2,7 +2,7 @@
 
 import Vue from 'vue';
 import Wrapper from './Wrapper';
-import App from './App.vue';
+import App from './components/App';
 import './scss/global.scss';
 
 new Vue({

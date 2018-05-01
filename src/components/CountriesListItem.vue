@@ -95,8 +95,8 @@ export default {
 }
 
 .flag {
-    flex: 1 1 62px;
-    text-align: center;
+    flex: 3 1 auto;
+    text-align: right;
 }
 
 @media only screen and (max-width: 359px) {
@@ -106,7 +106,7 @@ export default {
 }
 
 .name {
-    flex: 2 1 100px;
+    flex: 9 1 100px;
     text-align: center;
     display: inline-block;
     text-overflow: ellipsis;
