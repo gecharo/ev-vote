@@ -1,14 +1,6 @@
-<template>
-    <span :class="[$style.position, {[$style.active]: active}]"><span><slot></slot></span></span>
+<template functional>
+    <span :class="[$style.position, {[$style.active]: props.active}]"><span><slot></slot></span></span>
 </template>
-
-<script>
-export default {
-    props: {
-        active: Boolean
-    }
-};
-</script>
 
 <style lang="scss" module>
     .position {

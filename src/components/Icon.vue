@@ -1,16 +1,10 @@
-<template>
-    <i :class="['fa', `fa-${icon}`, `fa-${size}`, $style.root, {[$style.active]: active}]" aria-hidden="true" />
+<template functional>
+    <i
+        :class="['fa', `fa-${props.icon}`, `fa-${props.size}`, $style.root, {[$style.active]: props.active}]"
+        v-on="listeners"
+        aria-hidden="true"
+    />
 </template>
-
-<script>
-export default {
-    props: {
-        active: Boolean,
-        size: String,
-        icon: String
-    }
-};
-</script>
 
 <style lang="scss" module>
 .root {

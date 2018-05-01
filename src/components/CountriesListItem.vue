@@ -5,10 +5,8 @@
             <position :index="index" :active="voteActive">{{ voted ? index + 1 : '0' }}</position>
             <flag :class="$style.flag" :abbr="item.abbr"/>
             <span :class="$style.name">{{ item.name }}</span>
-            <div :class="$style.results">
-                <div :class="$style.icon"><icon @click.native="handleIconClick" :active="voteActive" :icon="voteVisible && voteActive ? 'trash' : 'star'" size="lg" /></div>
-                <span :class="$style.currentVote" v-if="voteActive">{{ item.vote }}</span>
-            </div>
+            <div :class="$style.icon"><icon @click="handleIconClick" :active="voteActive" :icon="voteVisible && voteActive ? 'trash' : 'star'" size="lg" /></div>
+            <span :class="[$style.currentVote, {[$style.currentVoteVisible]: voteActive} ]">{{ item.vote }}</span>
         </div>
         <vote-list :class="$style.voteList" v-if="voteVisible" @vote="handleVote" :vote="item.vote" />
     </li>
@@ -111,18 +109,19 @@ export default {
     overflow: hidden;
 }
 
-.results {
-    width: 65px;
-    display: inline-flex;
-    flex-direction: row;
-    align-items: center;
+// .results {
+//     width: 65px;
+//     display: inline-flex;
+//     flex-direction: row;
+//     align-items: center;
 
-    > *:not(:last-child) {
-        margin-right: $base-size-m;
-    }
-}
+//     > *:not(:last-child) {
+//         margin-right: $base-size-m;
+//     }
+// }
 
 .icon {
+    flex: 0 0 auto;
     width: 28px;
     text-align: center;
     padding-bottom: 1px;
@@ -132,6 +131,11 @@ export default {
     flex: 0 0 auto;
     width: 28px;
     text-align: center;
+    visibility: hidden;
+
+    &.currentVoteVisible {
+        visibility: visible;
+    }
 }
 
 </style>
