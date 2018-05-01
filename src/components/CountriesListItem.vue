@@ -111,8 +111,8 @@ export default {
     display: inline-block;
     text-overflow: ellipsis;
     overflow: hidden;
-    line-height: 18px;
-    padding: 5px 0;
+    line-height: 19px;
+    padding: 4px 0;
 }
 
 .icon {
