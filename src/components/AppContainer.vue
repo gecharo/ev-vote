@@ -8,10 +8,9 @@
 @import "./../scss/sizes.scss";
 
 .container {
-    position: relative;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    padding: $base-size-l;
+    padding: $base-size-m 0;
 }
 </style>

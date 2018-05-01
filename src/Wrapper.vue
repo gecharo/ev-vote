@@ -24,6 +24,7 @@
     background-position: center;
     width: 100%;
     height: 342px;
+    opacity: 0.5;
 }
 
 .waves {

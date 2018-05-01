@@ -5,7 +5,7 @@
             <position :class="$style.position" :index="index" :active="voteActive">{{ voted ? index + 1 : '0' }}</position>
             <flag :class="$style.flag" :abbr="item.abbr"/>
             <span :class="$style.name">{{ item.name }}</span>
-            <div :class="$style.icon"><icon @click="handleIconClick" :active="voteActive" :icon="voteVisible && voteActive ? 'trash' : 'star'" size="lg" /></div>
+            <div :class="$style.icon"><icon @click="handleIconClick" :active="voteActive" :name="voteVisible && voteActive ? 'trash' : 'star'" size="lg" /></div>
             <span :class="[$style.currentVote, {[$style.currentVoteVisible]: voteActive} ]">{{ item.vote }}</span>
         </div>
         <vote-list :class="$style.voteList" v-if="voteVisible" @vote="handleVote" :vote="item.vote" />

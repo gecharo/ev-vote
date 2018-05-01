@@ -1,0 +1,79 @@
+<template>
+    <div :class="$style.footer">
+        <div :class="$style.left">
+            <a href="mailto:gecharo@gmail.com">gecharo</a> © 2018
+        </div>
+        <div :class="$style.right">
+            <icon v-if="active" :class="[$style.reset]" name="times-circle" size="2x" @click="handleClick" />
+        </div>
+    </div>
+</template>
+
+<script>
+import Icon from './Icon';
+
+let resetClickCount = 0;
+let resetTimeoutId;
+
+export default {
+    components: {
+        Icon
+    },
+    props: {
+        active: Boolean
+    },
+    methods: {
+        handleClick() {
+            clearTimeout(resetTimeoutId);
+            resetClickCount += 1;
+            if (resetClickCount === 3) {
+                this.$emit('reset');
+                resetClickCount = 0;
+            } else {
+                resetTimeoutId = setTimeout(() => {
+                    clearTimeout(resetTimeoutId);
+                    resetClickCount = 0;
+                }, 400);
+            }
+        }
+    }
+};
+</script>
+
+<style lang="scss" module>
+@import "./../scss/sizes.scss";
+
+$footer-color: #292929;
+$footer-color-hover: #151515;
+
+.footer {
+    padding: $base-size-m 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    color: $footer-color;
+}
+.left {
+    font-size: 16px;
+    font-weight: bold;
+    flex: 1 1 auto;
+
+    a:link, a:visited {
+        color: $footer-color;
+        text-decoration: none;
+    }
+    a:hover, a:active {
+        color: $footer-color-hover;
+    }
+}
+.right {
+    flex: 0 0 auto;
+    padding-right: 41px;
+}
+.reset {
+    &:hover {
+        color: $footer-color-hover;
+    }
+}
+</style>

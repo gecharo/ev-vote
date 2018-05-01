@@ -5,7 +5,7 @@
             v-for="(item, index) in votes"
             :key="index"
         >
-            <icon @click="handleClick(item)" :class="$style.item" icon="star" :active="item <= vote" />
+            <icon @click="handleClick(item)" :class="$style.item" name="star" :active="item <= vote" />
         </div>
     </div>
 </template>

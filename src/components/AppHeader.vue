@@ -8,7 +8,7 @@
 @import "./../scss/sizes.scss";
 
 .header {
-    padding: 2 * $base-size-xl 0;
+    padding: $base-size-l 0;
     text-align: center;
 }
 </style>
