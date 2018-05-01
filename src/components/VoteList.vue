@@ -44,7 +44,7 @@ export default {
     margin: $base-size-m 0;
     justify-content: space-between;
     padding: $base-size-s + 1 $base-size-m $base-size-s $base-size-m;
-    background-color: rgba(54, 63, 84, 0.68);
+    background-color: rgba(50, 56, 71, 0.5);
     border-radius: 10px;
     @include box-shadow();
 }

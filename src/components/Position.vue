@@ -1,11 +1,10 @@
 <template>
-    <span :class="[$style.position, {[$style.active]: active}]"><span>{{ index + 1 }}</span></span>
+    <span :class="[$style.position, {[$style.active]: active}]"><span><slot></slot></span></span>
 </template>
 
 <script>
 export default {
     props: {
-        index: Number,
         active: Boolean
     }
 };
@@ -20,7 +19,7 @@ export default {
         width: 32px;
         height: 32px;
         border-radius: 50%;
-        background-color: #222d40;
+        background-color: #20293b;
         color: white;
         letter-spacing: -2px;
 

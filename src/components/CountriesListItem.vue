@@ -2,12 +2,12 @@
     <li :class="$style.item">
         <div :class="$style.container">
             <span :class="$style.started">{{ item.id }}</span>
-            <position :index="index" :active="voted" />
+            <position :index="index" :active="voteActive">{{ voted ? index + 1 : '0' }}</position>
             <flag :class="$style.flag" :abbr="item.abbr"/>
             <span :class="$style.name">{{ item.name }}</span>
             <div :class="$style.results">
-                <div :class="$style.icon"><icon @click.native="handleIconClick" :active="voted" :icon="voteVisible && item.vote > 0 ? 'trash' : 'star'" size="lg" /></div>
-                <span :class="$style.currentVote" v-if="voted">{{ item.vote }}</span>
+                <div :class="$style.icon"><icon @click.native="handleIconClick" :active="voteActive" :icon="voteVisible && voteActive ? 'trash' : 'star'" size="lg" /></div>
+                <span :class="$style.currentVote" v-if="voteActive">{{ item.vote }}</span>
             </div>
         </div>
         <vote-list :class="$style.voteList" v-if="voteVisible" @vote="handleVote" :vote="item.vote" />
@@ -29,7 +29,10 @@ export default {
     },
     computed: {
         voted() {
-            return this.item.vote !== 0;
+            return this.item.vote >= 0;
+        },
+        voteActive() {
+            return this.item.vote > 0;
         }
     },
     props: {
@@ -43,15 +46,15 @@ export default {
     },
     methods: {
         handleIconClick() {
-            if (this.voteVisible && this.item.vote > 0) {
-                this.handleVote(0);
+            if (this.voteVisible && this.item.vote >= 0) {
+                this.handleVote(-1);
             } else {
                 this.voteVisible = !this.voteVisible;
             }
         },
         handleVote(vote) {
-            this.$set(this.item, 'vote', vote);
             this.voteVisible = false;
+            this.$set(this.item, 'vote', vote);
 
             this.$emit('vote', this.index, this.item);
         }
@@ -122,6 +125,7 @@ export default {
 .icon {
     width: 28px;
     text-align: center;
+    padding-bottom: 1px;
 }
 
 .currentVote {

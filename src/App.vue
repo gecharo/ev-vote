@@ -46,8 +46,8 @@ body {
     width: 100%;
     height: 100%;
     background-color: #1c212e;
-    background-image: url("images/pattern_gray.gif");
-    color: #e5e5e5;
+    background-image: url("images/pattern.gif");
+    color: #efefef;
 
     font-family: "Oxygen", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
