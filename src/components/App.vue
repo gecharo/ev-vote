@@ -25,7 +25,7 @@ export default {
     data() {
         return {
             countries: LocalStorage.getData(),
-            voted: false
+            voted: LocalStorage.getVoted()
         };
     },
     methods: {
