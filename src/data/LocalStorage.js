@@ -7,9 +7,6 @@ export default class LocalStorage {
     constructor(votedCallback) {
         this.votedCallback = votedCallback;
         const storedCountries = BrowserCookies.get('ev-counties');
-        if (!storedCountries) {
-            this.setData(cData.countries);
-        }
         this.setVoted(!!storedCountries);
     }
     getData() { // eslint-disable-line
