@@ -81,7 +81,7 @@ export default {
             border-radius: 50%;
             background-color: #ffdd00;
             > i {
-                color: #1c212e;
+                color: rgb(69, 71, 76);
             }
         }
 
