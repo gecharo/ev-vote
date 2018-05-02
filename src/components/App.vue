@@ -22,22 +22,26 @@ export default {
         AppFooter,
         CountriesList
     },
+    created() {
+        this.localStorage = new LocalStorage(this.handleVotedChange);
+
+        this.countries = this.localStorage.getData();
+    },
     data() {
         return {
-            countries: LocalStorage.getData(),
-            voted: LocalStorage.getVoted()
+            countries: undefined,
+            voted: false
         };
     },
     methods: {
         handleVoteChange(item, items) {
-            if (!this.voted) {
-                this.voted = true;
-            }
-            LocalStorage.setData(items);
+            this.localStorage.setData(items);
         },
         handleReset() {
-            this.voted = false;
-            this.$data.countries = LocalStorage.reset();
+            this.$data.countries = this.localStorage.reset();
+        },
+        handleVotedChange(voted) {
+            this.voted = voted;
         }
     }
 };
