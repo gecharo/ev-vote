@@ -14,7 +14,7 @@ export default class LocalStorage {
     }
     setData(countries) {
         const newCountries = JSON.stringify(countries);
-        BrowserCookies.set('ev-counties', newCountries);
+        BrowserCookies.set('ev-counties', newCountries, { expires: 14 });
         this.setVoted(true);
     }
     reset() {
