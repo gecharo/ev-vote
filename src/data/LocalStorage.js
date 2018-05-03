@@ -6,11 +6,10 @@ const defaultCountries = JSON.stringify(cData.countries);
 export default class LocalStorage {
     constructor(votedCallback) {
         this.votedCallback = votedCallback;
+    }
+    getData() {
         const storedCountries = BrowserCookies.get('ev-counties');
         this.setVoted(!!storedCountries);
-    }
-    getData() { // eslint-disable-line
-        const storedCountries = BrowserCookies.get('ev-counties');
         return JSON.parse(storedCountries || defaultCountries);
     }
     setData(countries) {
@@ -20,7 +19,6 @@ export default class LocalStorage {
     }
     reset() {
         BrowserCookies.erase('ev-counties');
-        this.setVoted(false);
         return this.getData();
     }
     setVoted(value) {
