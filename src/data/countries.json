@@ -4,157 +4,209 @@
             "id": 1,
             "name": "Israel",
             "abbr": "il",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         },
         {
             "id": 2,
             "name": "Poland",
             "abbr": "pl",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         },
         {
             "id": 3,
             "name": "Belarus",
             "abbr": "by",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         },
         {
             "id": 4,
             "name": "Austria",
             "abbr": "at",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         },
         {
             "id": 5,
             "name": "Armenia",
             "abbr": "am",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         },
         {
             "id": 6,
             "name": "The Netherlands",
             "abbr": "nl",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         },
         {
             "id": 7,
             "name": "Moldova",
             "abbr": "md",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         },
         {
             "id": 8,
             "name": "Hungary",
             "abbr": "hu",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         },
         {
             "id": 9,
             "name": "Italy",
             "abbr": "it",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         },
         {
             "id": 10,
             "name": "Denmark",
             "abbr": "dk",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         },
         {
             "id": 11,
             "name": "Portugal",
             "abbr": "pt",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         },
         {
             "id": 12,
             "name": "Azerbaijan",
             "abbr": "az",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         },
         {
             "id": 13,
             "name": "Croatia",
             "abbr": "hr",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         },
         {
             "id": 14,
             "name": "Australia",
             "abbr": "au",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         },
         {
             "id": 15,
             "name": "Greece",
             "abbr": "gr",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         },
         {
             "id": 16,
             "name": "Spain",
             "abbr": "es",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         },
         {
             "id": 17,
             "name": "Norway",
             "abbr": "no",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         },
         {
             "id": 18,
             "name": "United Kingdom",
             "abbr": "gb",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         },
         {
             "id": 19,
             "name": "Cyprus",
             "abbr": "cy",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         },
         {
             "id": 20,
             "name": "Romania",
             "abbr": "ro",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         },
         {
             "id": 21,
             "name": "Germany",
             "abbr": "de",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         },
         {
             "id": 22,
             "name": "Ukraine",
             "abbr": "ua",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         },
         {
             "id": 23,
             "name": "Belgium",
             "abbr": "be",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         },
         {
             "id": 24,
             "name": "Sweden",
             "abbr": "se",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         },
         {
             "id": 25,
             "name": "Bulgaria",
             "abbr": "bg",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         },
         {
             "id": 26,
             "name": "France",
             "abbr": "fr",
-            "vote": -1
+            "vote": -1,
+            "artist": "Artist Name",
+            "song": "Song Title"
         }
     ]
 }

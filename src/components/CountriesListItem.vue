@@ -4,7 +4,10 @@
             <span :class="$style.started">{{ item.id }}</span>
             <position :class="$style.position" :index="index" :active="voteActive">{{ voted ? index + 1 : '0' }}</position>
             <flag :class="$style.flag" :abbr="item.abbr"/>
-            <span :class="$style.name">{{ item.name }}</span>
+            <div :class="$style.nameContainer">
+                <div :class="$style.name">{{ item.name }}</div>
+                <div :class="$style.artist">{{ `${item.artist} - ${item.song}` }}</div>
+            </div>
             <div :class="$style.icon"><icon @click="handleIconClick" :active="voteActive" :name="voteVisible && voteActive ? 'trash' : 'star'" size="lg" /></div>
             <span :class="[$style.currentVote, {[$style.currentVoteVisible]: voteActive} ]">{{ item.vote }}</span>
         </div>
@@ -105,14 +108,24 @@ export default {
     }
 }
 
-.name {
+.nameContainer {
     flex: 9 1 100px;
     text-align: center;
-    display: inline-block;
     text-overflow: ellipsis;
     overflow: hidden;
+}
+
+.name {
+    width: 100%;
+    display: inline-block;
     line-height: 19px;
-    padding: 4px 0;
+}
+
+.artist {
+    width: 100%;
+    font-size: 14px;
+    color: #B9B9B9;
+    opacity: 0.8;
 }
 
 .icon {
