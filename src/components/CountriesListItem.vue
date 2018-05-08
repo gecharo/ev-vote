@@ -90,7 +90,6 @@ export default {
     font-size: 14px;
     text-align: center;
     color: #626568;
-    padding-right: 6px;
 }
 
 .position {
@@ -124,7 +123,7 @@ export default {
 .artist {
     width: 100%;
     font-size: 14px;
-    color: #B9B9B9;
+    color: #BBBBBB;
     opacity: 0.8;
 }
 
