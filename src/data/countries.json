@@ -2,211 +2,83 @@
     "countries": [
         {
             "id": 1,
-            "name": "Israel",
-            "abbr": "il",
+            "name": "Albania",
+            "abbr": "al",
             "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
+            "artist": "Eugent Bushpepa",
+            "song": "Mall"
         },
         {
             "id": 2,
-            "name": "Poland",
-            "abbr": "pl",
-            "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
-        },
-        {
-            "id": 3,
-            "name": "Belarus",
-            "abbr": "by",
-            "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
-        },
-        {
-            "id": 4,
             "name": "Austria",
             "abbr": "at",
             "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
+            "artist": "Cesar Sampson",
+            "song": "Nobody But You"
         },
         {
-            "id": 5,
-            "name": "Armenia",
-            "abbr": "am",
-            "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
-        },
-        {
-            "id": 6,
-            "name": "The Netherlands",
-            "abbr": "nl",
-            "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
-        },
-        {
-            "id": 7,
-            "name": "Moldova",
-            "abbr": "md",
-            "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
-        },
-        {
-            "id": 8,
-            "name": "Hungary",
-            "abbr": "hu",
-            "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
-        },
-        {
-            "id": 9,
-            "name": "Italy",
-            "abbr": "it",
-            "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
-        },
-        {
-            "id": 10,
-            "name": "Denmark",
-            "abbr": "dk",
-            "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
-        },
-        {
-            "id": 11,
-            "name": "Portugal",
-            "abbr": "pt",
-            "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
-        },
-        {
-            "id": 12,
-            "name": "Azerbaijan",
-            "abbr": "az",
-            "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
-        },
-        {
-            "id": 13,
-            "name": "Croatia",
-            "abbr": "hr",
-            "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
-        },
-        {
-            "id": 14,
-            "name": "Australia",
-            "abbr": "au",
-            "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
-        },
-        {
-            "id": 15,
-            "name": "Greece",
-            "abbr": "gr",
-            "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
-        },
-        {
-            "id": 16,
-            "name": "Spain",
-            "abbr": "es",
-            "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
-        },
-        {
-            "id": 17,
-            "name": "Norway",
-            "abbr": "no",
-            "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
-        },
-        {
-            "id": 18,
-            "name": "United Kingdom",
-            "abbr": "gb",
-            "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
-        },
-        {
-            "id": 19,
-            "name": "Cyprus",
-            "abbr": "cy",
-            "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
-        },
-        {
-            "id": 20,
-            "name": "Romania",
-            "abbr": "ro",
-            "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
-        },
-        {
-            "id": 21,
-            "name": "Germany",
-            "abbr": "de",
-            "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
-        },
-        {
-            "id": 22,
-            "name": "Ukraine",
-            "abbr": "ua",
-            "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
-        },
-        {
-            "id": 23,
-            "name": "Belgium",
-            "abbr": "be",
-            "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
-        },
-        {
-            "id": 24,
-            "name": "Sweden",
-            "abbr": "se",
-            "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
-        },
-        {
-            "id": 25,
+            "id": 3,
             "name": "Bulgaria",
             "abbr": "bg",
             "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
+            "artist": "Equinox",
+            "song": "Bones"
         },
         {
-            "id": 26,
-            "name": "France",
-            "abbr": "fr",
+            "id": 4,
+            "name": "Cyprus",
+            "abbr": "cy",
             "vote": -1,
-            "artist": "Artist Name",
-            "song": "Song Title"
+            "artist": "Eleni Foureira",
+            "song": "Fuego"
+        },
+        {
+            "id": 5,
+            "name": "Czech Republic",
+            "abbr": "cz",
+            "vote": -1,
+            "artist": "Mikolas Josef",
+            "song": "Lie To Me"
+        },
+        {
+            "id": 6,
+            "name": "Estonia",
+            "abbr": "es",
+            "vote": -1,
+            "artist": "Elina Nechayeva",
+            "song": "La Forza"
+        },
+        {
+            "id": 7,
+            "name": "Finland",
+            "abbr": "fi",
+            "vote": -1,
+            "artist": "Saara Aalto",
+            "song": "Monsters"
+        },
+        {
+            "id": 8,
+            "name": "Ireland",
+            "abbr": "ie",
+            "vote": -1,
+            "artist": "Ryan O'Shaughnessy",
+            "song": "Together"
+        },
+        {
+            "id": 9,
+            "name": "Israel",
+            "abbr": "il",
+            "vote": -1,
+            "artist": "Netta Barzilai",
+            "song": "Toy"
+        },
+        {
+            "id": 0,
+            "name": "Lithuania",
+            "abbr": "lt",
+            "vote": -1,
+            "artist": "Ieva Zasimauskaite",
+            "song": "When We're Old"
         }
     ]
 }

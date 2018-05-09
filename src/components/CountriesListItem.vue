@@ -1,15 +1,15 @@
 <template>
     <li :class="$style.item">
         <div :class="$style.container">
-            <span :class="$style.started">{{ item.id }}</span>
+            <div :class="$style.started">{{ item.id }}</div>
             <position :class="$style.position" :index="index" :active="voteActive">{{ voted ? index + 1 : '0' }}</position>
-            <flag :class="$style.flag" :abbr="item.abbr"/>
+            <div :class="$style.flag"><flag :abbr="item.abbr"/></div>
             <div :class="$style.nameContainer">
                 <div :class="$style.name">{{ item.name }}</div>
                 <div :class="$style.artist">{{ `${item.artist} - ${item.song}` }}</div>
             </div>
             <div :class="$style.icon"><icon @click="handleIconClick" :active="voteActive" :name="voteVisible && voteActive ? 'trash' : 'star'" size="lg" /></div>
-            <span :class="[$style.currentVote, {[$style.currentVoteVisible]: voteActive} ]">{{ item.vote }}</span>
+            <div :class="[$style.currentVote, {[$style.currentVoteVisible]: voteActive} ]">{{ item.vote }}</div>
         </div>
         <vote-list :class="$style.voteList" v-if="voteVisible" @vote="handleVote" :vote="item.vote" />
     </li>
@@ -92,19 +92,14 @@ export default {
     color: #626568;
 }
 
-.position {
-    flex: 0 0 auto;
-}
-
-.flag {
-    flex: 3 1 auto;
-    text-align: right;
-}
-
-@media only screen and (max-width: 359px) {
-    .flag {
+@media only screen and (max-width: 399px) {
+    .started {
         display: none;
     }
+}
+
+.position {
+    flex: 0 0 auto;
 }
 
 .nameContainer {
@@ -123,7 +118,7 @@ export default {
 .artist {
     width: 100%;
     font-size: 14px;
-    color: #BBBBBB;
+    color: #B9B9B9;
     opacity: 0.8;
 }
 
