@@ -103,12 +103,12 @@ export default {
 }
 
 .flag {
-    flex: 3 1 auto;
+    flex: 1 1 auto;
     text-align: right;
 }
 
 .nameContainer {
-    flex: 9 1 100px;
+    flex: 4 1 100px;
     text-align: center;
     text-overflow: ellipsis;
     overflow: hidden;

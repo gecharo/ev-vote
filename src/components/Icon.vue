@@ -12,7 +12,7 @@
     cursor: pointer;
 
     &.active {
-        color: #ffdd00;
+        color: #f6d603;
     }
 }
 </style>

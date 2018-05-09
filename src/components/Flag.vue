@@ -5,8 +5,8 @@
 <style lang="scss" module>
 @import './../scss/shadow.scss';
 
-$flag-size: 59px;
-$flag-size-small: 49px;
+$flag-size: 63px;
+$flag-size-small: 53px;
 
 .root {
     line-height: 0;
