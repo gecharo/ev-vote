@@ -9,21 +9,27 @@ $flag-size: 63px;
 $flag-size-small: 53px;
 
 .root {
-    line-height: 0;
-}
-
-.flag {
-    width: $flag-size-small;
-    height: $flag-size-small;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
     border: 4px solid rgba(255, 255, 255, 0.1);
     border-radius: 50%;
+    overflow: hidden;
+    width: $flag-size-small;
+    height: $flag-size-small;
     @include box-shadow();
 }
 
+.flag {
+    height: $flag-size-small;
+}
+
 @media only screen and (min-width: 400px) {
-    .flag {
+    .root {
         width: $flag-size;
+        height: $flag-size;
+    }
+
+    .flag {
         height: $flag-size;
     }
 }
