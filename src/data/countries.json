@@ -1,7 +1,7 @@
 {
     "countries": [
         {
-            "id": 1,
+            "id": 16,
             "name": "Albania",
             "abbr": "al",
             "vote": -1,
@@ -43,7 +43,7 @@
         {
             "id": 6,
             "name": "Estonia",
-            "abbr": "es",
+            "abbr": "ee",
             "vote": -1,
             "artist": "Elina Nechayeva",
             "song": "La Forza"
@@ -73,12 +73,60 @@
             "song": "Toy"
         },
         {
-            "id": 0,
+            "id": 1,
             "name": "Lithuania",
             "abbr": "lt",
             "vote": -1,
             "artist": "Ieva Zasimauskaite",
             "song": "When We're Old"
+        },
+        {
+            "id": 11,
+            "name": "France",
+            "abbr": "fr",
+            "vote": -1,
+            "artist": "Madame Monsieur",
+            "song": "Mercy"
+        },
+        {
+            "id": 12,
+            "name": "Germany",
+            "abbr": "de",
+            "vote": -1,
+            "artist": "Michael Schulte",
+            "song": "You Let Me Walk Alone"
+        },
+        {
+            "id": 13,
+            "name": "Spain",
+            "abbr": "es",
+            "vote": -1,
+            "artist": "Tu Cancion",
+            "song": "Amaia & Alfred"
+        },
+        {
+            "id": 14,
+            "name": "United Kingdom",
+            "abbr": "gb",
+            "vote": -1,
+            "artist": "SuRie",
+            "song": "Storm"
+        },
+        {
+            "id": 15,
+            "name": "Italy",
+            "abbr": "it",
+            "vote": -1,
+            "artist": "Meta & Moro",
+            "song": "Non Mi Avete Fatto Niente"
+        },
+        {
+            "id": 16,
+            "name": "Portugal",
+            "abbr": "pt",
+            "vote": -1,
+            "artist": "Claudia Pascoal",
+            "song": "O Jardim"
         }
     ]
 }
