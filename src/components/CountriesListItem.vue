@@ -105,10 +105,12 @@ export default {
 .flag {
     flex: 1 1 auto;
     text-align: right;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .nameContainer {
-    flex: 4 1 100px;
+    flex: 5 1 100px;
     text-align: center;
     text-overflow: ellipsis;
     overflow: hidden;
