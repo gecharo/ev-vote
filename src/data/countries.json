@@ -1,7 +1,7 @@
 {
     "countries": [
         {
-            "id": 16,
+            "startPosition": 16,
             "name": "Albania",
             "abbr": "al",
             "vote": -1,
@@ -9,7 +9,7 @@
             "song": "Mall"
         },
         {
-            "id": 2,
+            "startPosition": 2,
             "name": "Austria",
             "abbr": "at",
             "vote": -1,
@@ -17,7 +17,7 @@
             "song": "Nobody But You"
         },
         {
-            "id": 3,
+            "startPosition": 3,
             "name": "Bulgaria",
             "abbr": "bg",
             "vote": -1,
@@ -25,7 +25,7 @@
             "song": "Bones"
         },
         {
-            "id": 4,
+            "startPosition": 4,
             "name": "Cyprus",
             "abbr": "cy",
             "vote": -1,
@@ -33,7 +33,7 @@
             "song": "Fuego"
         },
         {
-            "id": 5,
+            "startPosition": 5,
             "name": "Czech Republic",
             "abbr": "cz",
             "vote": -1,
@@ -41,7 +41,7 @@
             "song": "Lie To Me"
         },
         {
-            "id": 6,
+            "startPosition": 6,
             "name": "Estonia",
             "abbr": "ee",
             "vote": -1,
@@ -49,7 +49,7 @@
             "song": "La Forza"
         },
         {
-            "id": 7,
+            "startPosition": 7,
             "name": "Finland",
             "abbr": "fi",
             "vote": -1,
@@ -57,7 +57,7 @@
             "song": "Monsters"
         },
         {
-            "id": 8,
+            "startPosition": 8,
             "name": "Ireland",
             "abbr": "ie",
             "vote": -1,
@@ -65,7 +65,7 @@
             "song": "Together"
         },
         {
-            "id": 9,
+            "startPosition": 9,
             "name": "Israel",
             "abbr": "il",
             "vote": -1,
@@ -73,7 +73,7 @@
             "song": "Toy"
         },
         {
-            "id": 1,
+            "startPosition": 1,
             "name": "Lithuania",
             "abbr": "lt",
             "vote": -1,
@@ -81,7 +81,7 @@
             "song": "When We're Old"
         },
         {
-            "id": 11,
+            "startPosition": 11,
             "name": "France",
             "abbr": "fr",
             "vote": -1,
@@ -89,7 +89,7 @@
             "song": "Mercy"
         },
         {
-            "id": 12,
+            "startPosition": 12,
             "name": "Germany",
             "abbr": "de",
             "vote": -1,
@@ -97,7 +97,7 @@
             "song": "You Let Me Walk Alone"
         },
         {
-            "id": 13,
+            "startPosition": 13,
             "name": "Spain",
             "abbr": "es",
             "vote": -1,
@@ -105,7 +105,7 @@
             "song": "Amaia & Alfred"
         },
         {
-            "id": 14,
+            "startPosition": 14,
             "name": "United Kingdom",
             "abbr": "gb",
             "vote": -1,
@@ -113,7 +113,7 @@
             "song": "Storm"
         },
         {
-            "id": 15,
+            "startPosition": 15,
             "name": "Italy",
             "abbr": "it",
             "vote": -1,
@@ -121,7 +121,7 @@
             "song": "Non Mi Avete Fatto Niente"
         },
         {
-            "id": 16,
+            "startPosition": 16,
             "name": "Portugal",
             "abbr": "pt",
             "vote": -1,

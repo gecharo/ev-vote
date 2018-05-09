@@ -4,7 +4,7 @@
             v-for="(item, index) in items"
             :item="item"
             :index="index"
-            :key="item.id"
+            :key="item.startPosition"
             @vote="handleVote"
         />
     </ul>

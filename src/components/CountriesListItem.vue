@@ -1,7 +1,7 @@
 <template>
     <li :class="$style.item">
         <div :class="$style.container">
-            <div :class="$style.started">{{ item.id }}</div>
+            <div :class="$style.started">{{ item.startPosition }}</div>
             <position :class="$style.position" :index="index" :active="voteActive">{{ voted ? index + 1 : '0' }}</position>
             <div :class="$style.flag"><flag :abbr="item.abbr"/></div>
             <div :class="$style.nameContainer">

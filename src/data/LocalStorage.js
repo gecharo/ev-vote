@@ -1,7 +1,9 @@
 import BrowserCookies from 'browser-cookies';
 import cData from './countries.json';
 
-const defaultCountries = JSON.stringify(cData.countries);
+const sortByStart = ({ startPosition: p1 }, { startPosition: p2 }) => p1 - p2;
+
+const defaultCountries = JSON.stringify(cData.countries.sort(sortByStart));
 
 export default class LocalStorage {
     constructor(votedCallback) {
