@@ -22,7 +22,7 @@ export default {
     },
     data() {
         return {
-            votes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12]
+            votes: [1, 2, 3, 4, 5, 6, 7, 8, 10, 12]
         };
     },
     methods: {
@@ -37,13 +37,21 @@ export default {
 @import "./../scss/sizes.scss";
 @import './../scss/shadow.scss';
 
+@mixin star($size) {
+    flex: 0 0 $size;
+    width: $size;
+    height: $size;
+    font-size: $size - 5;
+    line-height: $size;
+}
+
 .root {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: $base-size-m 0;
+    margin: $base-size-m 0 $base-size-m + $base-size-xs 0;
     justify-content: space-between;
-    padding: $base-size-s + 1 $base-size-m $base-size-s $base-size-m;
+    padding: $base-size-m + 1 $base-size-m $base-size-m - 1 $base-size-m;
     background-color: rgba(69, 71, 76, 0.5);
     border-radius: 10px;
     @include box-shadow();
@@ -57,22 +65,11 @@ export default {
     user-select: none;
     cursor: pointer;
 
-    flex: 0 0 32px;
-    width: 32px;
-    height: 32px;
-
     > i {
         color: #e5e5e5;
     }
-}
 
-@media only screen and (min-width: 320px) {
-    .vote {
-        flex: 0 0 20px;
-        width: 20px;
-        height: 20px;
-        font-size: 19px;
-    }
+    @include star(24px);
 }
 
 @media only screen and (min-width: 360px) {
@@ -85,19 +82,13 @@ export default {
             }
         }
 
-        flex: 0 0 24px;
-        width: 24px;
-        height: 24px;
-        font-size: 20px;
+        @include star(28px);
     }
 }
 
-@media only screen and (min-width: 420px) {
+@media only screen and (min-width: 440px) {
     .vote {
-        flex: 0 0 32px;
-        width: 32px;
-        height: 32px;
-        font-size: 28px;
+        @include star(34px);
     }
 }
 

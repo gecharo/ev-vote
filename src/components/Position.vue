@@ -17,7 +17,7 @@
         letter-spacing: -2px;
 
         & > span {
-            opacity: 0.5;
+            opacity: 0.39;
             margin-right: 3px;
         }
 
