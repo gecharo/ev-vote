@@ -102,6 +102,11 @@ export default {
     flex: 0 0 auto;
 }
 
+.flag {
+    flex: 3 1 auto;
+    text-align: right;
+}
+
 .nameContainer {
     flex: 9 1 100px;
     text-align: center;
