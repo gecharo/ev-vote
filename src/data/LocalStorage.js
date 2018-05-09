@@ -12,8 +12,7 @@ export default class LocalStorage {
     getData() {
         const storedCountries = BrowserCookies.get('ev-counties');
         this.setVoted(!!storedCountries);
-        // return JSON.parse(storedCountries || defaultCountries);
-        return JSON.parse(defaultCountries);
+        return JSON.parse(storedCountries || defaultCountries);
     }
     setData(countries) {
         const newCountries = JSON.stringify(countries);
