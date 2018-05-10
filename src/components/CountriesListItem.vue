@@ -2,16 +2,22 @@
     <li :class="$style.item">
         <div :class="$style.container">
             <b :class="$style.started">{{ item.startPosition }}</b>
-            <position :class="$style.position" :index="index" :active="voteActive" :semiActive="voted">{{ voted ? index + 1 : '0' }}</position>
-            <div :class="$style.flag"><flag :abbr="item.abbr"/></div>
-            <div :class="$style.nameContainer">
+            <div :class="$style.positionCnt">
+                <position :index="index" :active="voteActive" :semiActive="voted">{{ voted ? index + 1 : '0' }}</position>
+            </div>
+            <div :class="$style.flagCnt">
+                <flag :abbr="item.abbr"/>
+            </div>
+            <div :class="$style.nameCnt">
                 <div :class="$style.name">{{ item.name }}</div>
                 <div :class="$style.artist">{{ `${item.artist} - ${item.song}` }}</div>
             </div>
-            <div :class="$style.icon"><icon @click="handleToggle" :active="!voting && voteActive" :name="voting ? 'close' : 'star'" size="lg" /></div>
-            <div :class="$style.currentVote">
+            <div :class="$style.iconCnt">
+                <icon @click="handleToggle" :active="!voting && voteActive" :name="voting ? 'close' : 'star'" size="lg" />
+            </div>
+            <div :class="$style.voteCnt">
                 <span v-if="!voting && item.vote > 0">{{ item.vote }}</span>
-                <icon v-if="voting" name="trash" size="lg" @click="handleDelete" />
+                <icon v-if="voting" :class="$style.trash" name="trash" size="lg" @click="handleDelete" />
             </div>
         </div>
         <vote-list :class="$style.voteList" v-if="voting" @vote="handleVote" :vote="item.vote" />
@@ -87,8 +93,7 @@ export default {
 }
 
 .started {
-    flex: 0 0 auto;
-    width: 18px;
+    flex: 0 0 18px;
     font-size: 14px;
     text-align: center;
     color: rgba(0, 0, 0, 0.28);
@@ -100,18 +105,18 @@ export default {
     }
 }
 
-.position {
+.positionCnt {
     flex: 0 0 auto;
 }
 
-.flag {
+.flagCnt {
     flex: 1 1 auto;
     text-align: right;
     display: flex;
     justify-content: flex-end;
 }
 
-.nameContainer {
+.nameCnt {
     flex: 5 1 100px;
     text-align: center;
     text-overflow: ellipsis;
@@ -131,17 +136,19 @@ export default {
     opacity: 0.8;
 }
 
-.icon {
-    flex: 0 0 auto;
-    width: 28px;
+.iconCnt {
+    flex: 0 0 28px;
     text-align: center;
     padding-bottom: 1px;
 }
 
-.currentVote {
-    flex: 0 0 auto;
-    width: 28px;
+.voteCnt {
+    flex: 0 0 28px;
     text-align: center;
+}
+
+.trash {
+    margin-bottom: 3px;
 }
 
 </style>
