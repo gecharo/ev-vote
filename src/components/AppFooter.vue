@@ -43,8 +43,8 @@ export default {
 <style lang="scss" module>
 @import "./../scss/sizes.scss";
 
-$footer-color: rgba(0, 0, 0, 0.28);
-$footer-color-hover: rgba(0, 0, 0, 0.59);
+$footer-color: rgba(0, 0, 0, 0.31);
+$footer-color-hover: rgba(0, 0, 0, 0.65);
 
 .footer {
     padding: $base-size-m 0;

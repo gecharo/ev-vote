@@ -16,8 +16,8 @@
                 <icon @click="handleToggle" :active="!voting && voteActive" :name="voting ? 'close' : 'star'" size="lg" />
             </div>
             <div :class="$style.voteCnt">
-                <span v-if="!voting && item.vote > 0">{{ item.vote }}</span>
-                <icon v-if="voting" :class="$style.trash" name="trash" size="lg" @click="handleDelete" />
+                <span v-if="!voting && voteActive">{{ item.vote }}</span>
+                <icon v-if="voting && voted" :class="$style.trash" name="trash" size="lg" @click="handleDelete" />
             </div>
         </div>
         <vote-list :class="$style.voteList" v-if="voting" @vote="handleVote" :vote="item.vote" />
@@ -96,7 +96,7 @@ export default {
     flex: 0 0 18px;
     font-size: 14px;
     text-align: center;
-    color: rgba(0, 0, 0, 0.28);
+    color: rgba(0, 0, 0, 0.31);
 }
 
 @media only screen and (max-width: 399px) {
@@ -148,7 +148,7 @@ export default {
 }
 
 .trash {
-    margin-bottom: 3px;
+    margin-bottom: 4px;
 }
 
 </style>

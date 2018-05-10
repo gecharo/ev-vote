@@ -17,6 +17,7 @@
 
         & > span {
             opacity: 0.39;
+            padding-bottom: 1px;
         }
 
         &.semiActive {
