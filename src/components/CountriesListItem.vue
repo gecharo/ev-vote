@@ -1,17 +1,20 @@
 <template>
     <li :class="$style.item">
         <div :class="$style.container">
-            <div :class="$style.started">{{ item.startPosition }}</div>
-            <position :class="$style.position" :index="index" :active="voteActive">{{ voted ? index + 1 : '0' }}</position>
+            <b :class="$style.started">{{ item.startPosition }}</b>
+            <position :class="$style.position" :index="index" :active="voteActive" :semiActive="voted">{{ voted ? index + 1 : '0' }}</position>
             <div :class="$style.flag"><flag :abbr="item.abbr"/></div>
             <div :class="$style.nameContainer">
                 <div :class="$style.name">{{ item.name }}</div>
                 <div :class="$style.artist">{{ `${item.artist} - ${item.song}` }}</div>
             </div>
-            <div :class="$style.icon"><icon @click="handleIconClick" :active="voteActive" :name="voteVisible && voteActive ? 'trash' : 'star'" size="lg" /></div>
-            <div :class="[$style.currentVote, {[$style.currentVoteVisible]: voteActive} ]">{{ item.vote }}</div>
+            <div :class="$style.icon"><icon @click="handleToggle" :active="!voting && voteActive" :name="voting ? 'close' : 'star'" size="lg" /></div>
+            <div :class="$style.currentVote">
+                <span v-if="!voting && item.vote > 0">{{ item.vote }}</span>
+                <icon v-if="voting" name="trash" size="lg" @click="handleDelete" />
+            </div>
         </div>
-        <vote-list :class="$style.voteList" v-if="voteVisible" @vote="handleVote" :vote="item.vote" />
+        <vote-list :class="$style.voteList" v-if="voting" @vote="handleVote" :vote="item.vote" />
     </li>
 </template>
 
@@ -42,22 +45,21 @@ export default {
     },
     data() {
         return {
-            voteVisible: false
+            voting: false
         };
     },
     methods: {
-        handleIconClick() {
-            if (this.voteVisible && this.item.vote >= 0) {
-                this.handleVote(-1);
-            } else {
-                this.voteVisible = !this.voteVisible;
-            }
+        handleToggle() {
+            this.voting = !this.voting;
         },
         handleVote(vote) {
-            this.voteVisible = false;
+            this.voting = false;
             this.$set(this.item, 'vote', vote);
 
             this.$emit('vote', this.index, this.item);
+        },
+        handleDelete() {
+            this.handleVote(-1);
         }
     }
 };
@@ -89,7 +91,7 @@ export default {
     width: 18px;
     font-size: 14px;
     text-align: center;
-    color: #626568;
+    color: rgba(0, 0, 0, 0.28);
 }
 
 @media only screen and (max-width: 399px) {
@@ -140,11 +142,6 @@ export default {
     flex: 0 0 auto;
     width: 28px;
     text-align: center;
-    visibility: hidden;
-
-    &.currentVoteVisible {
-        visibility: visible;
-    }
 }
 
 </style>
