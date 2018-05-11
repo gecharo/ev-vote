@@ -5,39 +5,35 @@ const { assign } = Object;
 
 const sortByStart = field => (c1, c2) => c1[field] - c2[field];
 
-const countriesData = cData.countries.sort(sortByStart('startPosition'));
+const hasVoted = cookies => cookies.some(({ vote }) => vote > -1);
 
 export default class LocalStorage {
     constructor(votedCallback) {
         this.votedCallback = votedCallback;
+        this.countriesData = cData.countries.sort(sortByStart('startPosition'));
 
-        // BrowserCookies.erase('evvt-counties');
-        if (!BrowserCookies.get('evvt-counties')) {
-            this.setData(countriesData);
+        const cookieString = BrowserCookies.get('evvt-counties');
+        if (!cookieString) {
+            this.setData(this.countriesData);
+        } else {
+            this.setVoted(hasVoted(this.getData()));
         }
     }
-    getData() { // eslint-disable-line
+    getData() {
         const cookie = JSON.parse(BrowserCookies.get('evvt-counties'));
-        return countriesData.map(country => assign(country, cookie[country.startPosition])).sort(sortByStart('pos'));
+        return this.countriesData.map(country => assign(country, cookie[country.startPosition])).sort(sortByStart('pos'));
     }
     setData(countries) {
-        let hasVoted = false;
-        const cookie = countries.reduce((o, { startPosition, vote, vId = '' }, index) => {
+        this.setVoted(hasVoted(countries));
+
+        const cookieData = countries.reduce((o, { startPosition, vote, vId = '' }, index) => {
             o[startPosition] = { vote, vId, pos: index + 1 };
-            if (!hasVoted) {
-                hasVoted = vote > -1;
-            }
             return o;
         }, {});
-        this.setVoted(hasVoted);
-        BrowserCookies.set('evvt-counties', JSON.stringify(cookie), { expires: 33 });
+        BrowserCookies.set('evvt-counties', JSON.stringify(cookieData), { expires: 33 });
     }
-    reset() { // eslint-disable-line
-        return countriesData.map((item) => {
-            item.vote = -1;
-            delete item.pos;
-            return item;
-        }).sort(sortByStart('startPosition'));
+    reset() {
+        return this.countriesData.map(item => assign(item, { vote: -1, pos: item.startPosition })).sort(sortByStart('pos'));
     }
     setVoted(value) {
         const { voted } = this;

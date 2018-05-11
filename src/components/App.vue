@@ -54,7 +54,7 @@ export default {
             this.localStorage.setData(items);
         },
         handleReset() {
-            this.$data.countries = this.localStorage.reset();
+            this.localStorage.setData(this.localStorage.reset());
         },
         handleVotedChange(voted) {
             this.voted = voted;
