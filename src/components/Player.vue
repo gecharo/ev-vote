@@ -1,8 +1,6 @@
 <template>
     <div :class="$style.root">
-        <div :class="$style.videoWrapper">
-            <iframe id="video" :class="$style.video" :src="`https://www.youtube.com/embed/${vId}`" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
+        <iframe :width="vWidth" :height="vHeight" :src="`https://www.youtube.com/embed/${vId}`" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         <icon :class="$style.close" @click="handleClose" name="close" size="lg" />
     </div>
 </template>
@@ -17,6 +15,33 @@ export default {
     props: {
         vId: String,
         handleClose: Function
+    },
+    data() {
+        return {
+            vWidth: 0,
+            vHeight: 0
+        };
+    },
+    created() {
+        this.handleResize();
+        window.addEventListener('resize', this.handleResize);
+    },
+    destroyed() {
+        window.removeEventListener('resize', this.handleResize);
+    },
+    methods: {
+        handleResize() {
+            const w = window.innerWidth;
+            const h = window.innerHeight;
+
+            if (w / h > 16 / 9) {
+                this.vHeight = h;
+                this.vWidth = (h * 16) / 9;
+            } else {
+                this.vWidth = w;
+                this.vHeight = (w * 9) / 16;
+            }
+        }
     }
 };
 </script>
@@ -28,30 +53,14 @@ export default {
     background-color: rgba(0, 0, 0, 0.8);
 
     display: flex;
-    flex-direction: column;
     justify-content: center;
-
+    align-items: center;
 }
 
 .close {
     position: absolute;
     top: $base-size-l;
     right: $base-size-l;
-}
-
-.videoWrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-}
-
-.video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
 }
 
 </style>
