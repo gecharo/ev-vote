@@ -1,7 +1,7 @@
 <template>
     <div :class="$style.root">
         <div :class="$style.name">{{ name }}</div>
-        <div :class="$style.artist" @click="handleFetch">{{ `${artist} - ${song}` }}<icon :class="$style.play" name="play-circle" /></div>
+        <div :class="$style.artist"><span @click="handleFetch">{{ `${artist} - ${song}` }}<icon :class="$style.play" name="play-circle" /></span></div>
     </div>
 </template>
 
@@ -64,16 +64,21 @@ export default {
 .name {
     width: 100%;
     display: inline-block;
-    line-height: 19px;
+    line-height: 20px;
 }
 
 .artist {
     width: 100%;
+    margin-top: $base-size-xs;
     font-size: 14px;
     color: #B9B9B9;
     opacity: 0.8;
 
     cursor: pointer;
+
+    &:hover {
+        color: #efefef;
+    }
 }
 
 .play {

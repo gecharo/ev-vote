@@ -1,7 +1,7 @@
 <template>
     <div :class="$style.root">
         <iframe :width="vWidth" :height="vHeight" :src="`https://www.youtube.com/embed/${vId}`" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        <icon :class="$style.close" @click="handleClose" name="close" size="lg" />
+        <icon :class="$style.close" @click="handleClose" name="close" size="2x" />
     </div>
 </template>
 
