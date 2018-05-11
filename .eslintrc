@@ -35,6 +35,7 @@
             }
         ],
         "max-len": "off",
+        "no-param-reassign": 0,
         "vue/require-v-for-key": 0
     }
 }

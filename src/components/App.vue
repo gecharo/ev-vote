@@ -2,9 +2,10 @@
     <div :class="$style.app">
         <app-header :class="$style.fit" />
         <app-container :class="$style.fit">
-            <countries-list :items="countries"></countries-list>
+            <countries-list :items="countries" @voteChange="handleVoteChange" @openVideo="handleOpenVideo"></countries-list>
         </app-container>
         <app-footer :class="$style.fit" @reset="handleReset" :active="voted"/>
+        <player :class="$style.videoCnt" v-if="opened && vId" :vId="vId" :handleClose="handleCloseVideo" />
     </div>
 </template>
 
@@ -12,6 +13,7 @@
 import AppHeader from './AppHeader';
 import AppContainer from './AppContainer';
 import AppFooter from './AppFooter';
+import Player from './Player';
 import CountriesList from './CountriesList';
 import LocalStorage from './../data/LocalStorage';
 
@@ -20,6 +22,7 @@ export default {
         AppHeader,
         AppContainer,
         AppFooter,
+        Player,
         CountriesList
     },
     created() {
@@ -30,10 +33,24 @@ export default {
     data() {
         return {
             countries: undefined,
-            voted: false
+            voted: false,
+            vId: undefined,
+            opened: false
         };
     },
     methods: {
+        toggleVideo(val) {
+            this.opened = val;
+            document.body.style.overflow = val ? 'hidden' : 'auto';
+        },
+        handleOpenVideo(vId) {
+            this.vId = vId;
+            this.toggleVideo(true);
+        },
+        handleCloseVideo() {
+            // this.vId = undefined;
+            this.toggleVideo(false);
+        },
         handleVoteChange(item, items) {
             this.localStorage.setData(items);
         },
@@ -43,13 +60,16 @@ export default {
         handleVotedChange(voted) {
             this.voted = voted;
         }
-    },
-    watch: {
-        countries(items) {
-            // watch for changes in voting, also when videoId is fetched!
-            this.localStorage.setData(items);
-        }
     }
+    // watch: {
+    //     countries: {
+    //         handler(items) {
+    //             // watch for changes in voting, also when videoId is fetched (deep: true)!
+    //             this.localStorage.setData(items);
+    //         },
+    //         deep: true
+    //     }
+    // }
 };
 </script>
 
@@ -69,5 +89,12 @@ export default {
 }
 .fit {
     width: 100%;
+}
+.videoCnt {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 </style>

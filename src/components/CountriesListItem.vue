@@ -8,7 +8,7 @@
             <div :class="$style.flagCnt">
                 <flag :abbr="item.abbr"/>
             </div>
-            <country :class="$style.countryCnt" :item="item" />
+            <country :class="$style.countryCnt" :item="item" @openVideo="handleOpenVideo" />
             <div :class="$style.iconCnt">
                 <icon @click="handleToggle" :active="!voting && voteActive" :name="voting ? 'close' : 'star'" size="lg" />
             </div>
@@ -38,7 +38,8 @@ export default {
     },
     props: {
         index: Number,
-        item: Object
+        item: Object,
+        handleOpenVideo: Function
     },
     computed: {
         voted() {
