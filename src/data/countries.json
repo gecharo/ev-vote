@@ -1,7 +1,7 @@
 {
     "countries": [
         {
-            "startPosition": 10,
+            "startPosition": 12,
             "name": "Albania",
             "abbr": "al",
             "vote": -1,
@@ -9,7 +9,7 @@
             "song": "Mall"
         },
         {
-            "startPosition": 2,
+            "startPosition": 5,
             "name": "Austria",
             "abbr": "at",
             "vote": -1,
@@ -17,7 +17,7 @@
             "song": "Nobody But You"
         },
         {
-            "startPosition": 3,
+            "startPosition": 18,
             "name": "Bulgaria",
             "abbr": "bg",
             "vote": -1,
@@ -25,7 +25,7 @@
             "song": "Bones"
         },
         {
-            "startPosition": 4,
+            "startPosition": 25,
             "name": "Cyprus",
             "abbr": "cy",
             "vote": -1,
@@ -33,7 +33,7 @@
             "song": "Fuego"
         },
         {
-            "startPosition": 5,
+            "startPosition": 14,
             "name": "Czech Republic",
             "abbr": "cz",
             "vote": -1,
@@ -49,7 +49,7 @@
             "song": "La Forza"
         },
         {
-            "startPosition": 7,
+            "startPosition": 17,
             "name": "Finland",
             "abbr": "fi",
             "vote": -1,
@@ -57,7 +57,7 @@
             "song": "Monsters"
         },
         {
-            "startPosition": 8,
+            "startPosition": 24,
             "name": "Ireland",
             "abbr": "ie",
             "vote": -1,
@@ -65,7 +65,7 @@
             "song": "Together"
         },
         {
-            "startPosition": 9,
+            "startPosition": 22,
             "name": "Israel",
             "abbr": "il",
             "vote": -1,
@@ -73,7 +73,7 @@
             "song": "Toy"
         },
         {
-            "startPosition": 1,
+            "startPosition": 4,
             "name": "Lithuania",
             "abbr": "lt",
             "vote": -1,
@@ -81,7 +81,7 @@
             "song": "When We're Old"
         },
         {
-            "startPosition": 11,
+            "startPosition": 13,
             "name": "France",
             "abbr": "fr",
             "vote": -1,
@@ -89,7 +89,7 @@
             "song": "Mercy"
         },
         {
-            "startPosition": 12,
+            "startPosition": 11,
             "name": "Germany",
             "abbr": "de",
             "vote": -1,
@@ -97,7 +97,7 @@
             "song": "You Let Me Walk Alone"
         },
         {
-            "startPosition": 13,
+            "startPosition": 2,
             "name": "Spain",
             "abbr": "es",
             "vote": -1,
@@ -105,7 +105,7 @@
             "song": "Tu Cancion"
         },
         {
-            "startPosition": 14,
+            "startPosition": 9,
             "name": "United Kingdom",
             "abbr": "gb",
             "vote": -1,
@@ -113,7 +113,7 @@
             "song": "Storm"
         },
         {
-            "startPosition": 15,
+            "startPosition": 26,
             "name": "Italy",
             "abbr": "it",
             "vote": -1,
@@ -121,12 +121,92 @@
             "song": "Non Mi Avete Fatto Niente"
         },
         {
-            "startPosition": 16,
+            "startPosition": 8,
             "name": "Portugal",
             "abbr": "pt",
             "vote": -1,
             "artist": "Claudia Pascoal",
             "song": "O Jardim"
+        },
+        {
+            "startPosition": 16,
+            "name": "Australia",
+            "abbr": "au",
+            "vote": -1,
+            "artist": "Jessica Mauboy",
+            "song": "We Got Love"
+        },
+        {
+            "startPosition": 15,
+            "name": "Denmark",
+            "abbr": "dk",
+            "vote": -1,
+            "artist": "Rasmussen",
+            "song": "Higher Ground"
+        },
+        {
+            "startPosition": 21,
+            "name": "Hungary",
+            "abbr": "hu",
+            "vote": -1,
+            "artist": "AWS",
+            "song": "Viszlat Nyar"
+        },
+        {
+            "startPosition": 19,
+            "name": "Moldova",
+            "abbr": "md",
+            "vote": -1,
+            "artist": "DoReDos",
+            "song": "My Lucky Day"
+        },
+        {
+            "startPosition": 23,
+            "name": "Netherlands",
+            "abbr": "nl",
+            "vote": -1,
+            "artist": "Waylon",
+            "song": "Outlaw In 'Em"
+        },
+        {
+            "startPosition": 7,
+            "name": "Norway",
+            "abbr": "no",
+            "vote": -1,
+            "artist": "Alexander Rybak",
+            "song": "That's How You Write a Song"
+        },
+        {
+            "startPosition": 10,
+            "name": "Serbia",
+            "abbr": "rs",
+            "vote": -1,
+            "artist": "Sanja Ilic & Balkanika",
+            "song": "Nova Deca"
+        },
+        {
+            "startPosition": 3,
+            "name": "Slovenia",
+            "abbr": "si",
+            "vote": -1,
+            "artist": "Lea Sirk",
+            "song": "Hvala, ne!"
+        },
+        {
+            "startPosition": 20,
+            "name": "Sweden",
+            "abbr": "se",
+            "vote": -1,
+            "artist": "Benjamin Ingrosso",
+            "song": "Dance You Off"
+        },
+        {
+            "startPosition": 1,
+            "name": "Ukraine",
+            "abbr": "ua",
+            "vote": -1,
+            "artist": "Melovin",
+            "song": "Under the Ladder"
         }
     ]
 }
