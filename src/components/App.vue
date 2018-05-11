@@ -2,7 +2,7 @@
     <div :class="$style.app">
         <app-header :class="$style.fit" />
         <app-container :class="$style.fit">
-            <countries-list :items="countries" @change="handleVoteChange"></countries-list>
+            <countries-list :items="countries"></countries-list>
         </app-container>
         <app-footer :class="$style.fit" @reset="handleReset" :active="voted"/>
     </div>
@@ -42,6 +42,12 @@ export default {
         },
         handleVotedChange(voted) {
             this.voted = voted;
+        }
+    },
+    watch: {
+        countries(items) {
+            // watch for changes in voting, also when videoId is fetched!
+            this.localStorage.setData(items);
         }
     }
 };

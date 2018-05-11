@@ -8,10 +8,7 @@
             <div :class="$style.flagCnt">
                 <flag :abbr="item.abbr"/>
             </div>
-            <div :class="$style.nameCnt">
-                <div :class="$style.name">{{ item.name }}</div>
-                <div :class="$style.artist">{{ `${item.artist} - ${item.song}` }}</div>
-            </div>
+            <country :class="$style.countryCnt" :item="item" />
             <div :class="$style.iconCnt">
                 <icon @click="handleToggle" :active="!voting && voteActive" :name="voting ? 'close' : 'star'" size="lg" />
             </div>
@@ -29,13 +26,15 @@ import Flag from './Flag';
 import Position from './Position';
 import VoteList from './VoteList';
 import Icon from './Icon';
+import Country from './Country';
 
 export default {
     components: {
         Flag,
         Position,
         VoteList,
-        Icon
+        Icon,
+        Country
     },
     props: {
         index: Number,
@@ -116,24 +115,8 @@ export default {
     justify-content: flex-end;
 }
 
-.nameCnt {
+.countryCnt {
     flex: 5 1 100px;
-    text-align: center;
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
-
-.name {
-    width: 100%;
-    display: inline-block;
-    line-height: 19px;
-}
-
-.artist {
-    width: 100%;
-    font-size: 14px;
-    color: #B9B9B9;
-    opacity: 0.8;
 }
 
 .iconCnt {
