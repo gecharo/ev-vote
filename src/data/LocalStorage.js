@@ -33,7 +33,9 @@ export default class LocalStorage {
         BrowserCookies.set('evvt-counties', JSON.stringify(cookieData), { expires: 33 });
     }
     reset() {
-        return this.countriesData.map(item => assign(item, { vote: -1, pos: item.startPosition })).sort(sortByStart('pos'));
+        const countries = this.countriesData.map(item => assign(item, { vote: -1, pos: item.startPosition })).sort(sortByStart('startPosition'));
+        this.setData(countries);
+        return countries;
     }
     setVoted(value) {
         const { voted } = this;
