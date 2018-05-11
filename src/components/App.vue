@@ -48,10 +48,9 @@ export default {
             this.toggleVideo(true);
         },
         handleCloseVideo() {
-            // this.vId = undefined;
             this.toggleVideo(false);
         },
-        handleVoteChange(item, items) {
+        handleVoteChange(items) {
             this.localStorage.setData(items);
         },
         handleReset() {
@@ -61,15 +60,6 @@ export default {
             this.voted = voted;
         }
     }
-    // watch: {
-    //     countries: {
-    //         handler(items) {
-    //             // watch for changes in voting, also when videoId is fetched (deep: true)!
-    //             this.localStorage.setData(items);
-    //         },
-    //         deep: true
-    //     }
-    // }
 };
 </script>
 

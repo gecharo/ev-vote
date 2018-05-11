@@ -6,7 +6,7 @@
             :index="index"
             :key="item.startPosition"
             @vote="handleVote"
-            :handleOpenVideo="handleOpenVideo"
+            @openVideo="handleOpenVideo"
         />
     </ul>
 </template>
@@ -53,11 +53,10 @@ export default {
             }
 
             this.items.splice(insertIndex, 0, newItem);
-
-            this.$emit('change', this.items);
+            this.$emit('voteChange', this.items);
         },
         handleOpenVideo(item) {
-            this.items.splice(item.pos - 1, 1, item);
+            this.$emit('voteChange', this.items);
             this.$emit('openVideo', item.vId);
         }
     }

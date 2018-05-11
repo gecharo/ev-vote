@@ -1,7 +1,7 @@
 <template>
     <div :class="$style.root">
-        <div :class="$style.name">{{ item.name }}</div>
-        <div :class="$style.artist" @click="handleFetch">{{ `${item.artist} - ${item.song}` }}<icon :class="$style.play" name="play-circle" /></div>
+        <div :class="$style.name">{{ name }}</div>
+        <div :class="$style.artist" @click="handleFetch">{{ `${artist} - ${song}` }}<icon :class="$style.play" name="play-circle" /></div>
     </div>
 </template>
 
@@ -14,7 +14,10 @@ export default {
         Icon
     },
     props: {
-        item: Object
+        name: String,
+        artist: String,
+        song: String,
+        vId: String
     },
     data() {
         return {
@@ -23,19 +26,18 @@ export default {
     },
     methods: {
         handleFetch() {
-            if (!this.item.vId) {
+            if (!this.vId) {
                 axios.get('https://www.googleapis.com/youtube/v3/search', {
                     params: {
                         key: 'AIzaSyBqFiACMreuyi2AW1UN7Vqf9x_u06DVOmM',
                         part: 'snippet',
                         maxResults: 1,
                         channelId: 'UCRpjHHu8ivVWs73uxHlWwFA',
-                        q: `${this.item.name} ${this.item.artist} ${this.item.song} LIVE`
+                        q: `${this.name} ${this.artist} ${this.song} LIVE`
                     }
                 }).then((response) => {
                     try {
-                        this.$set(this.item, 'vId', response.data.items[0].id.videoId);
-                        this.$emit('openVideo', this.item);
+                        this.$emit('openVideo', response.data.items[0].id.videoId);
                     } catch (err) {
                         // error
                     }
@@ -43,7 +45,7 @@ export default {
                     // error
                 });
             } else {
-                this.$emit('openVideo', this.item);
+                this.$emit('openVideo', this.vId);
             }
         }
     }

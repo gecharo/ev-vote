@@ -8,7 +8,7 @@
             <div :class="$style.flagCnt">
                 <flag :abbr="item.abbr"/>
             </div>
-            <country :class="$style.countryCnt" :item="item" @openVideo="handleOpenVideo" />
+            <country :class="$style.countryCnt" :name="item.name" :artist="item.artist" :song="item.song" :vId="item.vId" @openVideo="handleOpenVideo" />
             <div :class="$style.iconCnt">
                 <icon @click="handleToggle" :active="!voting && voteActive" :name="voting ? 'close' : 'star'" size="lg" />
             </div>
@@ -38,8 +38,7 @@ export default {
     },
     props: {
         index: Number,
-        item: Object,
-        handleOpenVideo: Function
+        item: Object
     },
     computed: {
         voted() {
@@ -61,11 +60,14 @@ export default {
         handleVote(vote) {
             this.voting = false;
             this.$set(this.item, 'vote', vote);
-
             this.$emit('vote', this.index, this.item);
         },
         handleDelete() {
             this.handleVote(-1);
+        },
+        handleOpenVideo(vId) {
+            this.$set(this.item, 'vId', vId);
+            this.$emit('openVideo', this.item);
         }
     }
 };
