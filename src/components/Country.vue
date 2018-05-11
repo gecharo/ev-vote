@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import Icon from './Icon';
 import axios from 'axios';
+import Icon from './Icon';
 
 export default {
     components: {
@@ -22,15 +22,14 @@ export default {
     props: {
         item: Object
     },
-    data: function() {
+    data() {
         return {
             opened: false
-        }
+        };
     },
     methods: {
         handleOpen() {
             if (!this.item.videoId) {
-                console.log('PUMPINNNN')
                 axios.get('https://www.googleapis.com/youtube/v3/search', {
                     params: {
                         key: 'AIzaSyBqFiACMreuyi2AW1UN7Vqf9x_u06DVOmM',
@@ -41,17 +40,16 @@ export default {
                     }
                 }).then((response) => {
                     try {
-                        this.$set(this.item, 'videoId', response.data.items[0].id.videoId)
+                        this.$set(this.item, 'videoId', response.data.items[0].id.videoId);
                         this.handleToggle(true);
                     } catch (err) {
-                        // console.warn(err);
+                        // error
                     }
-                }).catch(({response}) => {
-                    // console.warn(response);
+                }).catch(() => {
+                    // error
                 });
             } else {
                 this.handleToggle(true);
-
             }
         },
         handleToggle(val) {
