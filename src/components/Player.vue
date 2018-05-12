@@ -34,13 +34,8 @@ export default {
             const w = window.innerWidth;
             const h = window.innerHeight;
 
-            if (w / h > 16 / 9) {
-                this.vHeight = h;
-                this.vWidth = (h * 16) / 9;
-            } else {
-                this.vWidth = w;
-                this.vHeight = (w * 9) / 16;
-            }
+            this.vWidth = Math.min(720, w / h > 16 / 9 ? (h * 16) / 9 : w);
+            this.vHeight = (this.vWidth * 9) / 16;
         }
     }
 };
