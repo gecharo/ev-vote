@@ -1,7 +1,7 @@
 <template>
-    <div :class="$style.root">
+    <div :class="$style.root" @click="handleClose">
         <iframe :width="vWidth" :height="vHeight" :src="`https://www.youtube.com/embed/${vId}`" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        <icon :class="$style.close" @click="handleClose" name="close" size="2x" />
+        <icon :class="$style.close" name="close" size="2x" />
     </div>
 </template>
 
@@ -45,11 +45,13 @@ export default {
 @import "./../scss/sizes.scss";
 
 .root {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.7);
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    cursor: pointer;
 }
 
 .close {
