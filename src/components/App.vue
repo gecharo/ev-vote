@@ -28,7 +28,7 @@ export default {
     created() {
         this.localStorage = new LocalStorage(this.handleVotedChange);
 
-        this.countries = this.localStorage.getData();
+        this.countries = this.localStorage.getCountries();
     },
     data() {
         return {
@@ -50,11 +50,11 @@ export default {
         handleCloseVideo() {
             this.toggleVideo(false);
         },
-        handleVoteChange(items) {
-            this.localStorage.setData(items);
+        handleVoteChange() {
+            this.localStorage.updateCookie();
         },
         handleReset() {
-            this.$data.countries = this.localStorage.reset();
+            this.$data.countries = this.localStorage.resetCountries();
         },
         handleVotedChange(voted) {
             this.voted = voted;

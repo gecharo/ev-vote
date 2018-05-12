@@ -7,35 +7,38 @@ const sortByStart = field => (c1, c2) => c1[field] - c2[field];
 
 const hasVoted = cookies => cookies.some(({ vote }) => vote > -1);
 
+const countriesDataDefault = JSON.stringify(cData.countries.sort(sortByStart('startPosition')));
+
 export default class LocalStorage {
     constructor(votedCallback) {
         this.votedCallback = votedCallback;
-        this.countriesData = cData.countries.sort(sortByStart('startPosition'));
+        this.countriesData = JSON.parse(countriesDataDefault);
 
         const cookieString = BrowserCookies.get('evvt-counties');
         if (!cookieString) {
-            this.setData(this.countriesData);
+            this.updateCookie(this.countriesData);
         } else {
-            this.setVoted(hasVoted(this.getData()));
+            this.setVoted(hasVoted(this.getCountries()));
         }
     }
-    getData() {
-        const cookie = JSON.parse(BrowserCookies.get('evvt-counties'));
-        return this.countriesData.map(country => assign(country, cookie[country.startPosition])).sort(sortByStart('pos'));
-    }
-    setData(countries) {
-        this.setVoted(hasVoted(countries));
+    updateCookie() {
+        this.setVoted(hasVoted(this.countriesData));
 
-        const cookieData = countries.reduce((o, { startPosition, vote, vId = '' }, index) => {
+        const cookieData = this.countriesData.reduce((o, { startPosition, vote, vId = '' }, index) => {
             o[startPosition] = { vote, vId, pos: index + 1 };
             return o;
         }, {});
         BrowserCookies.set('evvt-counties', JSON.stringify(cookieData), { expires: 33 });
     }
-    reset() {
-        const countries = this.countriesData.map(item => assign(item, { vote: -1, pos: item.startPosition })).sort(sortByStart('startPosition'));
-        this.setData(countries);
-        return countries;
+    getCountries() {
+        const cookie = JSON.parse(BrowserCookies.get('evvt-counties'));
+        return this.countriesData.map(country => assign(country, cookie[country.startPosition])).sort(sortByStart('pos'));
+    }
+    resetCountries() {
+        BrowserCookies.erase('evvt-counties');
+        this.countriesData = JSON.parse(countriesDataDefault);
+        this.updateCookie(this.countriesData);
+        return this.countriesData;
     }
     setVoted(value) {
         const { voted } = this;
