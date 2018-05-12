@@ -64,6 +64,7 @@ export default {
 .name {
     width: 100%;
     display: inline-block;
+    font-size: 22px;
     line-height: 20px;
 }
 

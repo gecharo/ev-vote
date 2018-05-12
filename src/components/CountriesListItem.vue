@@ -80,7 +80,6 @@ export default {
     width: 100%;
     margin: 0;
     padding: 0;
-    font-size: 22px;
 }
 
 .container {
@@ -126,11 +125,13 @@ export default {
     flex: 0 0 28px;
     text-align: center;
     padding-bottom: 1px;
+    font-size: 22px;
 }
 
 .voteCnt {
     flex: 0 0 28px;
     text-align: center;
+    font-size: 22px;
 }
 
 .trash {

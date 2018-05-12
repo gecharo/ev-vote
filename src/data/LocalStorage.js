@@ -16,15 +16,15 @@ export default class LocalStorage {
 
         const cookieString = BrowserCookies.get('evvt-counties');
         if (!cookieString) {
-            this.updateCookie(this.countriesData);
+            this.setCookie(this.countriesData);
         } else {
             this.setVoted(hasVoted(this.getCountries()));
         }
     }
-    updateCookie() {
-        this.setVoted(hasVoted(this.countriesData));
+    setCookie(countries) {
+        this.setVoted(hasVoted(countries));
 
-        const cookieData = this.countriesData.reduce((o, { startPosition, vote, vId = '' }, index) => {
+        const cookieData = countries.reduce((o, { startPosition, vote, vId = '' }, index) => {
             o[startPosition] = { vote, vId, pos: index + 1 };
             return o;
         }, {});
@@ -37,7 +37,7 @@ export default class LocalStorage {
     resetCountries() {
         BrowserCookies.erase('evvt-counties');
         this.countriesData = JSON.parse(countriesDataDefault);
-        this.updateCookie(this.countriesData);
+        this.setCookie(this.countriesData);
         return this.countriesData;
     }
     setVoted(value) {

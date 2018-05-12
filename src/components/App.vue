@@ -50,8 +50,8 @@ export default {
         handleCloseVideo() {
             this.toggleVideo(false);
         },
-        handleVoteChange() {
-            this.localStorage.updateCookie();
+        handleVoteChange(items) {
+            this.localStorage.setCookie(items);
         },
         handleReset() {
             this.$data.countries = this.localStorage.resetCountries();

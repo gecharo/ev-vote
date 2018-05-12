@@ -4,7 +4,6 @@
 
 <style lang="scss" module>
     .position {
-        flex: 0 0 auto;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -14,6 +13,7 @@
         background-color: #3c3f44;
         border: 2px solid #3a3b40;
         color: white;
+        font-size: 18px;
 
         & > span {
             opacity: 0.39;
@@ -23,7 +23,7 @@
             & > span {
                 opacity: 0.8;
             }
-            background-color: #4d6154;
+            background-color: #366948;
         }
 
         &.active {
