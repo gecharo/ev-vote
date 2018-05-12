@@ -3,8 +3,9 @@
         <div :class="$style.left">
             <a href="mailto:gecharo@gmail.com">gecharo</a> © 2018
         </div>
-        <div :class="$style.right">
-            <icon v-if="active" :class="[$style.reset]" name="times-circle" size="2x" @click="handleClick" />
+        <div :class="$style.right" v-if="active">
+            <b :class="$style.count" v-if="clicksLeft < 3">{{clicksLeft}}</b>
+            <icon :class="$style.reset" name="times-circle" size="lg" @click="handleClick" />
         </div>
     </div>
 </template>
@@ -12,7 +13,6 @@
 <script>
 import Icon from './Icon';
 
-let resetClickCount = 0;
 let resetTimeoutId;
 
 export default {
@@ -22,17 +22,22 @@ export default {
     props: {
         active: Boolean
     },
+    data() {
+        return {
+            clicksLeft: 3
+        };
+    },
     methods: {
         handleClick() {
             clearTimeout(resetTimeoutId);
-            resetClickCount += 1;
-            if (resetClickCount === 3) {
+            this.clicksLeft -= 1;
+            if (this.clicksLeft === 0) {
                 this.$emit('reset');
-                resetClickCount = 0;
+                this.clicksLeft = 3;
             } else {
                 resetTimeoutId = setTimeout(() => {
                     clearTimeout(resetTimeoutId);
-                    resetClickCount = 0;
+                    this.clicksLeft = 3;
                 }, 400);
             }
         }
@@ -70,10 +75,14 @@ $footer-color-hover: rgba(0, 0, 0, 0.65);
 .right {
     flex: 0 0 auto;
     padding-right: 41px;
+    font-size: 24px;
 }
 .reset {
     &:hover {
         color: $footer-color-hover;
     }
+}
+.count {
+    padding-right: $base-size-l;
 }
 </style>
