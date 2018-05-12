@@ -74,7 +74,9 @@ export default {
     color: #B9B9B9;
     opacity: 0.8;
 
-    cursor: pointer;
+    > span {
+        cursor: pointer;
+    }
 
     &:hover {
         color: #efefef;
