@@ -72,15 +72,14 @@ export default {
     width: 100%;
     margin-top: $base-size-xs;
     font-size: 14px;
-    color: #B9B9B9;
-    opacity: 0.8;
+    opacity: 0.6;
 
     > span {
         cursor: pointer;
     }
 
     &:hover {
-        color: #efefef;
+        opacity: 1;
     }
 }
 
